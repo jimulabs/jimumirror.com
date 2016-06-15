@@ -1,0 +1,34 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Preview Android layouts on real devices as you code - Mirror
+description: > # this means to ignore newlines until "baseurl:"
+  jimu Mirror provides live, on-device previews of Android layouts. It also allows you to create realistic prototypes of Android native UI without Java code.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "http://jimulabs.com" # the base hostname & protocol for your site
+twitter_username: https://twitter.com/jimulabs
+facebook_account: https://www.facebook.com/getjimu
+youtube_account: http://www.youtube.com/channel/UC8u5cSdDazTxBe8AZn7cI6Q
+google_account: https://google.com/+jimulabs
+name: "jimu Mirror: Live previews of Android layouts"
+
+
+# Build settings
+markdown: kramdown
+include: [_posts]
+
+gems:
+  - jekyll-redirect-from
+  - jekyll-paginate
+  
+whitelist:
+  - jekyll-redirect-from
+  
+paginate: 10
+paginate_path: "/posts/page:num/"
+permalink: /:year/:month/:title/

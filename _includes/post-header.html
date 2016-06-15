@@ -1,0 +1,12 @@
+    		<h2 class="entry-title">
+    			<a href="{{currentPost.url}}" title="{{currentPost.title}}" rel="bookmark">{{currentPost.title}}</a>
+    		</h2>
+    		<div class="entry-meta">
+    		 <span class="author vcard">Author: <a href="/author/{{currentPost.author}}/" title="{{currentPost.author}}">{{currentPost.author}}</a></span>
+    		 <span class="published">On: 
+    		 <a href="{{/currentPost.year/currentPost.month/}}">{{ currentPost.date | date: "%b %-d, %Y" }}</a></span>
+    		 <span class="category">Categories:  
+    		 {% for category in currentPost.categories %}
+    		 <a href="/category/{{category}}" rel="tag">{{ category }}</a> </span>
+    		 {% endfor %}
+    		 </div>
