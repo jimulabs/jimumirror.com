@@ -3,7 +3,8 @@ author: matt
 comments: true
 date: 2014-09-03 19:06:54+00:00
 layout: page
-redirect-from:
+redirect_from:
+- /mirror-js-designer-guide/
 - /mirror-js-designer-guide
 slug: mirror-js-designer-guide
 title: Mirror.js Setup Guide for Designers
