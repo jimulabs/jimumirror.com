@@ -15,6 +15,6 @@
     		 </span>
     		 <span class="category">Categories:  
     		 {% for category in currentPost.categories %}
-    		 <a href="{{site.baseurl}}/category/{{category}}" rel="tag">{{ category }}</a> </span>
+    		 <a href="{{site.baseurl}}/category/{{category | downcase}}" rel="tag">{{ category }}</a> </span>
     		 {% endfor %}
     		 </div>

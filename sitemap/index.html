@@ -28,7 +28,7 @@ title: Sitemap
 
 <h2>Posts by <a href= "{{site.baseurl}}/category">Category</a> </h2>
 {% for category in site.categories %}
-	<li> <strong class="category-title"> Category: <a href="{{site.baseurl}}/category/{{category|first}}"> {{category | first}} </a> </strong> </li>
+	<li> <strong class="category-title"> Category: <a href="{{site.baseurl}}/category/{{category|first |downcase}}"> {{category | first}} </a> </strong> </li>
 		<ul class='children'>
 		{% for catPosts in category %}
 		{% for catPost in catPosts %}

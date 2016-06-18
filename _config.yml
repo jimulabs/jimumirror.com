@@ -36,6 +36,7 @@ permalink: /:year/:month/:title/
 category_archive:
     path: /category/
     layout: archive
+    slugify: true
     
 monthly_archive:
     layout: archive
