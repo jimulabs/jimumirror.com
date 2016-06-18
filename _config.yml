@@ -34,7 +34,6 @@ paginate_path: "/posts/page:num/"
 permalink: /:year/:month/:title/
 
 category_archive:
-    slugify: true
     path: /category/
     layout: archive
     
