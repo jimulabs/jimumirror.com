@@ -10,7 +10,7 @@ categories:
 - Tutorial
 ---
 
-_This is a new series of posts on using Mirror to rapidly build your app's user interface. Mirror lets you see immediately how your layouts and resources look on your phone or tablet, without needing to code up mock adapters or constantly re-install your app. For a general overview of how to use Mirror, check out the [Mirror Tutorial](/mirror-tutorial)._
+_This is a new series of posts on using Mirror to rapidly build your app's user interface. Mirror lets you see immediately how your layouts and resources look on your phone or tablet, without needing to code up mock adapters or constantly re-install your app. For a general overview of how to use Mirror, check out the [Mirror Tutorial]({{site.baseurl}}/mirror-tutorial)._
 
 
 
@@ -34,13 +34,11 @@ Suppose you have a layout in your project that looks like this:
 
 
 
-[code lang="xml"]
-<!-- layouts/person.xml -->
-<RelativeLayout ...>
-    <TextView android:id="@+id/name" ... />
-    <ImageView android:id="@+id/avatar" .../>
-</RelativeLayout>
-[/code]
+		<!-- layouts/person.xml -->
+		<RelativeLayout ...>
+		    <TextView android:id="@+id/name" ... />
+		    <ImageView android:id="@+id/avatar" .../>
+		</RelativeLayout>
 
 
 
@@ -58,15 +56,13 @@ The first thing you can do is use a `tools` attribute, just as you would to fill
 
 
 
-[code lang="xml"]
-<!-- layouts/person.xml -->
-<RelativeLayout ...>
-    <TextView android:id="@+id/name"
-        tools:text="Alan Turing" ... />
-    <ImageView android:id="@+id/avatar"
-        tools:src="@drawable/turing" />
-</RelativeLayout>
-[/code]
+		<!-- layouts/person.xml -->
+		<RelativeLayout ...>
+			<TextView android:id="@+id/name"
+				tools:text="Alan Turing" ... />
+			<ImageView android:id="@+id/avatar"
+				tools:src="@drawable/turing" />
+		</RelativeLayout>
 
 
 
@@ -90,20 +86,18 @@ Mirror will automatically create a screen file for `person.xml` in the `mirror` 
 
 
 
-[code lang="xml"]
-<screen>
-    <_content layout="@layout/person">
-        <!-- TextView Examples:
-        <name text="@string/string_resource" />
-        <name text="Text literal" textSize="14sp" /> -->
-        <name />
-        <!-- ImageView Examples:
-        <avatar src="@drawable/image_resource" />
-        <avatar src="relative_path/image.jpg" /> -->
-        <avatar />
-    </_content>
-</screen>
-[/code]
+		<screen>
+			<_content layout="@layout/person">
+				<!-- TextView Examples:
+				<name text="@string/string_resource" />
+				<name text="Text literal" textSize="14sp" /> -->
+				<name />
+				<!-- ImageView Examples:
+				<avatar src="@drawable/image_resource" />
+				<avatar src="relative_path/image.jpg" /> -->
+				<avatar />
+			</_content>
+		</screen>
 
 
 
@@ -133,7 +127,7 @@ ImageViews can be filled with either drawable resources or image files on your h
 
 
 
-[Next time](/2014/09/building-android-layouts-mirror-listviews), we'll look at how to fill a ListView with distinct items, and really see how sample data gives us more flexibility than tools attributes. Thanks for reading!
+[Next time]({{site.baseurl}}/2014/09/building-android-layouts-mirror-listviews), we'll look at how to fill a ListView with distinct items, and really see how sample data gives us more flexibility than tools attributes. Thanks for reading!
 
 
 

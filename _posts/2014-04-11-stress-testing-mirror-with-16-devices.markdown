@@ -29,7 +29,7 @@ We've done some testing to see how many devices Mirror can support at the same t
 
 
 In the video we only showed theme changes through modifying AndroidManifest.xml because that's probably the more noticeable thing for a video like this. Of course changing other things worked too.
-
+<div class="seven_col vid-border"><iframe id="ytplayer" width="843" height="475" src="https://www.youtube.com/embed/CbFc8IcXTOU?controls=0&amp;rel=0&amp;showinfo=0" allowfullscreen="" frameborder="0"></iframe></div>
 
 
 
@@ -44,7 +44,7 @@ BTW: Excuse my unclear voiceover in the video. :)﻿
 
 
 
-![IMG_20140403_141546](/wp-content/uploads/2014/04/IMG_20140403_141546-1024x768.jpg)
+![IMG_20140403_141546]({{site.baseurl}}/wp-content/uploads/2014/04/IMG_20140403_141546-1024x768.jpg)
 
 
 

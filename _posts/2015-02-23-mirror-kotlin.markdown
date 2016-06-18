@@ -16,7 +16,7 @@ If you haven't tried [Kotlin](http://kotlinlang.org), you should really check it
 
 
 
-How is Mirror related to Kotlin? If you've heard of [Mirror Sandbox](/2015/01/building-android-animations-mirror-sandbox-piecewise/), you'll guess it right. Yes! Mirror will soon be able to hot-swap Kotlin code (together with Java code and Android resources).
+How is Mirror related to Kotlin? If you've heard of [Mirror Sandbox]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/), you'll guess it right. Yes! Mirror will soon be able to hot-swap Kotlin code (together with Java code and Android resources).
 
 
 
@@ -25,6 +25,7 @@ How is Mirror related to Kotlin? If you've heard of [Mirror Sandbox](/2015/01/bu
 Watch the quick demo below :
 
 
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/3tlIMPy9kZ8?rel=0" frameborder="0" allowfullscreen></iframe></p>
 
 
 

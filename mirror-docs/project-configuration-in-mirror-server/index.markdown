@@ -10,13 +10,13 @@ title: Project Setup for Mirror Standalone
 id: 392
 ---
 
-[[ Tutorials ]](/mirror-tutorial)  | [ Project Setup ] |  [[ Sample Data Specification ]](/sample-data-specifications)
+[[ Tutorials ]]({{site.baseurl}}/mirror-tutorial)  | [ Project Setup ] |  [[ Sample Data Specification ]]({{site.baseurl}}/sample-data-specifications)
 
 
 
 
 
-#### Note: If you're using Android Studio, you don't need to read this page. The Mirror plugin for Android Studio automatically configures your project. [Download it here](/mirror-downloads/).
+#### Note: If you're using Android Studio, you don't need to read this page. The Mirror plugin for Android Studio automatically configures your project. [Download it here]({{site.baseurl}}/mirror-downloads/).
 
 
 

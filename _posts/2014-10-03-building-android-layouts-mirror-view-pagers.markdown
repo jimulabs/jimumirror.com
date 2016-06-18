@@ -10,7 +10,7 @@ categories:
 - Tutorial
 ---
 
-_This is part of a series of posts on using Mirror to rapidly build your app's user interface. Mirror lets you see immediately how your layouts and resources look on your phone or tablet, without needing to code up mock adapters or constantly re-install your app. For a general overview of how to use Mirror, check out the [Mirror Tutorial](/mirror-tutorial)._
+_This is part of a series of posts on using Mirror to rapidly build your app's user interface. Mirror lets you see immediately how your layouts and resources look on your phone or tablet, without needing to code up mock adapters or constantly re-install your app. For a general overview of how to use Mirror, check out the [Mirror Tutorial]({{site.baseurl}}/mirror-tutorial)._
 
 
 
@@ -22,7 +22,7 @@ _This is part of a series of posts on using Mirror to rapidly build your app's u
 
 
 
-In the last two posts we looked at previewing lists using Mirror; we saw how to populate both [simple](/2014/09/building-android-layouts-mirror-listviews/) and [complex](/2014/09/build-android-layouts-mirror-complex-listviews/) lists. In this post we're going to look at view pagers. View pagers are a very common Android design pattern and form the backbone of the user experience for many apps. When you're implementing the layouts for the pages in a view pager, it's crucial to see the whole experience together to make sure the pages are consistent and are arranged in a sensible manner. Mirror lets you preview view pager based interfaces and, as usual, fill them with data to get an accurate view of your UI.
+In the last two posts we looked at previewing lists using Mirror; we saw how to populate both [simple]({{site.baseurl}}/2014/09/building-android-layouts-mirror-listviews/) and [complex]({{site.baseurl}}/2014/09/build-android-layouts-mirror-complex-listviews/) lists. In this post we're going to look at view pagers. View pagers are a very common Android design pattern and form the backbone of the user experience for many apps. When you're implementing the layouts for the pages in a view pager, it's crucial to see the whole experience together to make sure the pages are consistent and are arranged in a sensible manner. Mirror lets you preview view pager based interfaces and, as usual, fill them with data to get an accurate view of your UI.
 
 
 
@@ -34,10 +34,8 @@ As an example, the Gmail app lets you swipe left and right to move between messa
 
 
 
-[code lang="xml"]
-<!-- layout/inbox_messages.xml -->
-<ViewPager android:id="@+id/pager" ... />
-[/code]
+		<!-- layout/inbox_messages.xml -->
+		<ViewPager android:id="@+id/pager" ... />
 
 
 
@@ -49,16 +47,14 @@ We'll also need a layout to hold each message -- let's call it `message`. We'll 
 
 
 
-[code lang="xml"]
-<!-- layout/message.xml -->
-<ScrollView ...>
-    <LinearLayout ...>
-        <TextView android:id="@+id/sender" ... />
-        <TextView android:id="@+id/subject" ... />
-        <TextView android:id="@+id/content" ... />
-    </LinearLayout>
-</ScrollView>
-[/code]
+		<!-- layout/message.xml -->
+			<ScrollView ...>
+			    <LinearLayout ...>
+			        <TextView android:id="@+id/sender" ... />
+			        <TextView android:id="@+id/subject" ... />
+			        <TextView android:id="@+id/content" ... />
+			    </LinearLayout>
+			</ScrollView>
 
 
 
@@ -70,36 +66,34 @@ As always, Mirror previews screen files rather than layouts directly, so we'll n
 
 
 
-[code lang="xml"]
-<!-- mirror/messages.xml -->
-<screen>
-  <_content layout="@layout/inbox_messages">
-    <pager> <!-- the id of our ViewPager -->
-      <_page layout="@layout/message">
-        <sender text="James Gosling" />
-        <subject text="Fault tolerance" />
-        <content>In particular, you have to worry about how to build systems that can be robust
-        and continue operating in the face of partial failures, because most of the systems that
-        people are building that are of any interest are ones where there's always something
-        that's broken.</content>
-      </_page>
-      <_page layout="@layout/message">
-        <sender text="Bjarne Stroustrup" />
-        <subject text="Complexity" />
-        <content>The simple fact is that complexity will emerge somewhere, if not in the
-        language definition, than in thousands of applications and libraries.</content>
-      </_page>
-      <_page layout="@layout/message">
-        <sender text="Simon Peyton-Jones" />
-        <subject text="Purity" />
-        <content>You only have to reason about values and not about state. If you give a function
-        the same input, it'll give you the same output, every time. This has implications for
-        reasoning, for compiling, for parallelism.</content>
-      </_page>
-    </pager>
-  </_content>
-</screen>
-[/code]
+			<!-- mirror/messages.xml -->
+			<screen>
+			  <_content layout="@layout/inbox_messages">
+			    <pager> <!-- the id of our ViewPager -->
+			      <_page layout="@layout/message">
+			        <sender text="James Gosling" />
+			        <subject text="Fault tolerance" />
+			        <content>In particular, you have to worry about how to build systems that can be robust
+			        and continue operating in the face of partial failures, because most of the systems that
+			        people are building that are of any interest are ones where there's always something
+			        that's broken.</content>
+			      </_page>
+			      <_page layout="@layout/message">
+			        <sender text="Bjarne Stroustrup" />
+			        <subject text="Complexity" />
+			        <content>The simple fact is that complexity will emerge somewhere, if not in the
+			        language definition, than in thousands of applications and libraries.</content>
+			      </_page>
+			      <_page layout="@layout/message">
+			        <sender text="Simon Peyton-Jones" />
+			        <subject text="Purity" />
+			        <content>You only have to reason about values and not about state. If you give a function
+			        the same input, it'll give you the same output, every time. This has implications for
+			        reasoning, for compiling, for parallelism.</content>
+			      </_page>
+			    </pager>
+			  </_content>
+			</screen>
 
 
 

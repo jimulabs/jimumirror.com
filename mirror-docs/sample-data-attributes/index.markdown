@@ -10,7 +10,7 @@ title: Supporting custom attributes in sample data
 id: 389
 ---
 
-Mirror 1.1 has improved support for setting or overriding layout attributes in sample data files. It's now possible to mock up layout attribute values that might normally be set dynamically at run time, such as highlight colors or the visibility of individual elements in a list item. Many of the attributes defined normally for standard Android views and even custom attributes for custom views are supported in Mirror sample data. Attributes are set in sample data using populator tags, which are references to views in an associated Android layout file. If unfamiliar with populator tags, check out the [tutorial](/mirror-tutorial/) and [sample data specification](/sample-data-specifications/) documents before continuing.
+Mirror 1.1 has improved support for setting or overriding layout attributes in sample data files. It's now possible to mock up layout attribute values that might normally be set dynamically at run time, such as highlight colors or the visibility of individual elements in a list item. Many of the attributes defined normally for standard Android views and even custom attributes for custom views are supported in Mirror sample data. Attributes are set in sample data using populator tags, which are references to views in an associated Android layout file. If unfamiliar with populator tags, check out the [tutorial]({{site.baseurl}}/mirror-tutorial/) and [sample data specification]({{site.baseurl}}/sample-data-specifications/) documents before continuing.
 
 
 

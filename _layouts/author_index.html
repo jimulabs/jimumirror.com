@@ -1,0 +1,15 @@
+---
+layout: page
+type: author-index
+title: View Post By Author
+---
+
+<div id="blog-archives" class="author">
+  <ul class="post-list">
+    {% for currentPost in site.posts %}
+          {% if currentPost.author contains page.author %}
+          	{% include post-entry.html %}
+          {% endif %}
+	{% endfor %}
+	</ul>
+</div>

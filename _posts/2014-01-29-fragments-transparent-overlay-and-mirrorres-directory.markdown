@@ -10,7 +10,7 @@ categories:
 - Features
 ---
 
-_**TL;DR**: Mirror 1.2 introduces three premium features: initial fragment support, transparent overlay and "mirror/res" directory, useful features that help you build layouts and hi-fi prototypes more quickly. [Get Mirror now](/)._
+_**TL;DR**: Mirror 1.2 introduces three premium features: initial fragment support, transparent overlay and "mirror/res" directory, useful features that help you build layouts and hi-fi prototypes more quickly. [Get Mirror now]({{site.baseurl}}/)._
 
 Ladies and gentlemen, fragment support is here!
 
@@ -112,7 +112,7 @@ A few limitations of the fragment support as of Mirror 1.2:
 
 What's it about? A picture is worth a thousand words:
 
-[![overlay](/wp-content/uploads/2014/01/overlay-614x1024.png)](/wp-content/uploads/2014/01/overlay.png)
+[![overlay]({{site.baseurl}}/wp-content/uploads/2014/01/overlay-614x1024.png)]({{site.baseurl}}/wp-content/uploads/2014/01/overlay.png)
 
 Got it? You can now overlay a hi-fidelity mockup your designer creates on top to make pixel-perfect layouts. The overlay covers the entire screen space your app uses including the action bar. It's easy to turn the overlay on (and off) with an "overlay" attribute on the "screen" tag:
 
@@ -136,4 +136,4 @@ Starting from 1.2, MirrorServer automatically creates a "res" directory inside t
 ### Conclusion
 
 
-In Mirror 1.2, we introduce three premium features including initial fragment support, transparent overlay and "mirror/res" directory. Let us know your thoughts in the comment area below, or [get Mirror now](/mirror-downloads/)!
+In Mirror 1.2, we introduce three premium features including initial fragment support, transparent overlay and "mirror/res" directory. Let us know your thoughts in the comment area below, or [get Mirror now]({{site.baseurl}}/mirror-downloads/)!

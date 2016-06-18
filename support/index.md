@@ -35,7 +35,7 @@ Contact us and we'll be in touch!
 
 
 
-In additional, check out the [FAQ](/faq) and feel free to make a comment there.
+In additional, check out the [FAQ]({{site.baseurl}}/faq) and feel free to make a comment there.
 
 
 

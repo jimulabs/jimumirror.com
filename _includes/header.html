@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
+<title>{{page.title}}</title>
 <!-- This site uses the twitter bootstrap plugin -->
-<link rel="stylesheet" type="text/css" href="/wp-content/plugins/wordpress-bootstrap-css/resources/bootstrap-2.3.2/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/wp-content/plugins/wordpress-bootstrap-css/resources/bootstrap-2.3.2/css/bootstrap.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,31 +12,31 @@
 
     <!-- For use in JS files -->
     <script type="text/javascript">
-        var template_dir = "/wp-content/themes/appdev";
+        var template_dir = "{{site.baseurl}}/wp-content/themes/appdev";
     </script>
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
-    <link href="/wp-content/uploads/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <script type="text/javascript">var mo_options = mo_options || {};mo_options.ajax_portfolio = false;mo_options.disable_back_to_top = false;mo_options.sticky_menu = true;mo_options.theme_skin = "default";mo_options.theme_directory_url = "/wp-content/themes/appdev";mo_options.slider_chosen="FlexSlider";mo_options.flex_slider_effect="fade";mo_options.flex_slider_animation_speed=600;mo_options.flex_slider_pause_time=4000;mo_options.flex_slider_pause_on_hover="true";mo_options.flex_slider_display_random_slide="false";mo_options.disable_smooth_page_load=true;mo_options.disable_animations_on_page=false;mo_options.disable_smooth_scroll=true;</script>
+    <link href="{{site.baseurl}}/wp-content/uploads/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">var mo_options = mo_options || {};mo_options.ajax_portfolio = false;mo_options.disable_back_to_top = false;mo_options.sticky_menu = true;mo_options.theme_skin = "default";mo_options.theme_directory_url = "{{site.baseurl}}/wp-content/themes/appdev";mo_options.slider_chosen="FlexSlider";mo_options.flex_slider_effect="fade";mo_options.flex_slider_animation_speed=600;mo_options.flex_slider_pause_time=4000;mo_options.flex_slider_pause_on_hover="true";mo_options.flex_slider_display_random_slide="false";mo_options.disable_smooth_page_load=true;mo_options.disable_animations_on_page=false;mo_options.disable_smooth_scroll=true;</script>
     
-<link rel='stylesheet' id='tp_twitter_plugin_css-group-css' href='/css/tp_twitter_plugin_css-group-css.css' type='text/css' media='screen' />
-<link rel='stylesheet' id='crayon-group-css' href='/css/crayon-group-css.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tp_twitter_plugin_css-group-css' href='{{site.baseurl}}/css/tp_twitter_plugin_css-group-css.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='crayon-group-css' href='{{site.baseurl}}/css/crayon-group-css.css' type='text/css' media='all' />
 <!--[if IE 8]>
-<link rel='stylesheet' id='style-ie8-group-css' href='/css/style-ie8-group-css.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='style-ie8-group-css' href='{{site.baseurl}}/css/style-ie8-group-css.css' type='text/css' media='screen' />
 <![endif]-->
 <!--[if IE 9]>
-<link rel='stylesheet' id='style-ie9-group-css' href='/css/style-ie9-group-css.css' type='text/css' media='screen' />
+<link rel='stylesheet' id='style-ie9-group-css' href='{{site.baseurl}}/css/style-ie9-group-css.css' type='text/css' media='screen' />
 <![endif]-->
-<link rel='stylesheet' id='style-skin-php-css'  href='/css/style-skin-php-css.css' type='text/css' media='all' />
-<link rel='stylesheet' id='style-skin-css-group-css' href='/css/style-skin-css-group-css.css' type='text/css' media='all' />
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.3'></script>
-<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.0'></script>
+<link rel='stylesheet' id='style-skin-php-css'  href='{{site.baseurl}}/css/style-skin-php-css.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-skin-css-group-css' href='{{site.baseurl}}/css/style-skin-css-group-css.css' type='text/css' media='all' />
+<script type='text/javascript' src='{{site.baseurl}}/wp-includes/js/jquery/jquery.js?ver=1.12.3'></script>
+<script type='text/javascript' src='{{site.baseurl}}/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.0'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var CrayonSyntaxSettings = {"version":"2.7.0","is_admin":"0","ajaxurl":"http:\/\/jimulabs.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
 var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/js/crayon-group-js.js'></script>
+<script type='text/javascript' src='{{site.baseurl}}/js/crayon-group-js.js'></script>
 <link rel='shortlink' href=' {{ site.url }} ' />
 <link rel="alternate" type="text/xml+oembed" href="http://jimulabs.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fjimulabs.com%2F&#038;format=xml" />
 <!-- Options based styling -->
@@ -559,7 +560,7 @@ blockquote, blockquote p {
   font-weight: 200;
 }
 .hms-testimonial-container {
-  background: url("/wp-content/themes/appdev/images/quote.png") no-repeat scroll 0 0 transparent; 
+  background: url("{{site.baseurl}}/wp-content/themes/appdev/images/quote.png") no-repeat scroll 0 0 transparent; 
   padding: 5px 5px 80px 45px;
 }
 
@@ -569,7 +570,7 @@ blockquote, blockquote p {
 
 .n5-frame {
   width:50% !important;
-  background: url("/wp-content/uploads/video-optimized/n5-bg.png") no-repeat scroll 0 0 transparent;
+  background: url("{{site.baseurl}}/wp-content/uploads/video-optimized/n5-bg.png") no-repeat scroll 0 0 transparent;
   background-size: 100% 100%;
   padding-left: 16%;
   padding-top: 11%;
@@ -580,7 +581,7 @@ blockquote, blockquote p {
 }
 
 .mac-frame {
-  background: url("/wp-content/uploads/video-optimized/mac-bg.png") no-repeat scroll 0 0 transparent;
+  background: url("{{site.baseurl}}/wp-content/uploads/video-optimized/mac-bg.png") no-repeat scroll 0 0 transparent;
   background-size: 100% 100%;
   padding-left: 24.5%;
   padding-top: 6.2%;
@@ -594,12 +595,12 @@ blockquote, blockquote p {
 
 </head>
 
-{% if page.layout == "page" %}
-<body class="page page-template-default layout-default layout-2c chrome default">
-{% elsif page.layout == "post" %}
-<body class="single single-post postid-804 single-format-standard layout-default layout-2c chrome default">
+{% if page.layout != "default" and page.fullscreen != true" %}
+<body class="page page-template-default layout-default layout-2c default">
+{% elsif page.fullscreen and page.layout != "about-page" %}
+<body class="page page-id-532 page-template page-template-template-1c page-template-template-1c-php layout-1c  chrome default">
 {% else %}
-<body class="home page page-template page-template-template-advanced-home page-template-template-advanced-home-php layout-1c  fluid-width-page chrome default">
+<body class="home page page-template page-template-template-advanced-home page-template-template-advanced-home-php layout-1c  fluid-width-page default">
 {% endif %}
 
 <div id="container">
@@ -611,28 +612,28 @@ blockquote, blockquote p {
 
             <div class="wrap">
 
-                <h1 id="site-logo"><a href="/" title=" {{ site.title }}" rel="home"><img class="standard-logo" src="/wp-content/uploads/2013/03/logo_noSlogan_50x50.png" alt=" {{ site.name }} "/></a></h1>        <div class="social-container">
+                <h1 id="site-logo"><a href="{{site.baseurl}}/" title=" {{ site.title }}" rel="home"><img class="standard-logo" src="{{site.baseurl}}/wp-content/uploads/2013/03/logo_noSlogan_50x50.png" alt=" {{ site.name }} "/></a></h1>        <div class="social-container">
             <ul>
                 <li class="facebook"><a title="Follow us on Facebook" href=" {{ site.facebook_account }} ">Facebook</a></li><li class="googleplus"><a title="Follow us on Google Plus" href=" {{ site.google_account }} ">Google Plus</a></li><li class="twitter"><a title="Subscribe to our Twitter feed" href="{{ site.twitter_username }}">Twitter</a></li><li class="youtube"><a title="Subscribe to our YouTube channel" href="{{ site.youtube_account }}">YouTube</a></li>            </ul>
         </div>
-    <a id="mobile-menu-toggle" href="#"><i class="icon-list-3"></i>&nbsp;</a><div id="primary-menu" class="dropdown-menu-wrap clearfix"><ul id="menu-main-menu" class="menu clearfix"><li id="menu-item-684" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-682 current_page_item menu-item-has-children menu-item-684"><a href="/">Home ▾</a>
+    <a id="mobile-menu-toggle" href="#"><i class="icon-list-3"></i>&nbsp;</a><div id="primary-menu" class="dropdown-menu-wrap clearfix"><ul id="menu-main-menu" class="menu clearfix"><li id="menu-item-684" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-682 current_page_item menu-item-has-children menu-item-684"><a href="{{site.baseurl}}/">Home ▾</a>
 <ul class="sub-menu">
-	<li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="/if-studio-why-mirror/">If Studio, why Mirror?</a></li>
+	<li id="menu-item-657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="{{site.baseurl}}/if-studio-why-mirror/">If Studio, why Mirror?</a></li>
 </ul>
 </li>
-<li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577"><a href="/mirror-downloads/">Download</a></li>
-<li id="menu-item-760" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-760"><a href="/faq/">Learn ▾</a>
+<li id="menu-item-577" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577"><a href="{{site.baseurl}}/mirror-downloads/">Download</a></li>
+<li id="menu-item-760" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-760"><a href="{{site.baseurl}}/faq/">Learn ▾</a>
 <ul class="sub-menu">
-	<li id="menu-item-759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="/faq/">FAQ</a></li>
-	<li id="menu-item-659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="/mirror-docs/mirror-tutorial/">Getting started guide</a></li>
-	<li id="menu-item-767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-767"><a href="/category/tutorial/">Tutorials</a></li>
-	<li id="menu-item-663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663"><a href="/mirror-docs/sample-data-specifications/">Sample data spec</a></li>
+	<li id="menu-item-759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="{{site.baseurl}}/faq/">FAQ</a></li>
+	<li id="menu-item-659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="{{site.baseurl}}/mirror-docs/mirror-tutorial/">Getting started guide</a></li>
+	<li id="menu-item-767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-767"><a href="{{site.baseurl}}/category/tutorial/">Tutorials</a></li>
+	<li id="menu-item-663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663"><a href="{{site.baseurl}}/mirror-docs/sample-data-specifications/">Sample data spec</a></li>
 </ul>
 </li>
 <li id="menu-item-589" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-589"><a href="https://secure.jimulabs.com/buy">Buy</a></li>
-<li id="menu-item-769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769"><a href="/support/">Support</a></li>
-<li id="menu-item-568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-568"><a href="/posts/">Blog</a></li>
-<li id="menu-item-594" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-594"><a href="/about-us/">About</a></li>
+<li id="menu-item-769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769"><a href="{{site.baseurl}}/support/">Support</a></li>
+<li id="menu-item-568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-568"><a href="{{site.baseurl}}/posts/">Blog</a></li>
+<li id="menu-item-594" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-594"><a href="{{site.baseurl}}/about-us/">About</a></li>
 </ul></div><!-- #primary-menu -->
             </div>
 
@@ -641,24 +642,24 @@ blockquote, blockquote p {
     </div>
     <!-- #header -->
 
-    <div id="mobile-menu" class="menu-container clearfix"><ul id="menu-main-menu-1" class="menu inner"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-682 current_page_item menu-item-has-children menu-item-684"><a href="/">Home ▾</a>
+    <div id="mobile-menu" class="menu-container clearfix"><ul id="menu-main-menu-1" class="menu inner"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-682 current_page_item menu-item-has-children menu-item-684"><a href="{{site.baseurl}}/">Home ▾</a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="/if-studio-why-mirror/">If Studio, why Mirror?</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-657"><a href="{{site.baseurl}}/if-studio-why-mirror/">If Studio, why Mirror?</a></li>
 </ul>
 </li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577"><a href="/mirror-downloads/">Download</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-760"><a href="/faq/">Learn ▾</a>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-577"><a href="{{site.baseurl}}/mirror-downloads/">Download</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-760"><a href="{{site.baseurl}}/faq/">Learn ▾</a>
 <ul class="sub-menu">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="/faq/">FAQ</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="/mirror-docs/mirror-tutorial/">Getting started guide</a></li>
-	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-767"><a href="/category/tutorial/">Tutorials</a></li>
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663"><a href="/mirror-docs/sample-data-specifications/">Sample data spec</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-759"><a href="{{site.baseurl}}/faq/">FAQ</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-659"><a href="{{site.baseurl}}/mirror-docs/mirror-tutorial/">Getting started guide</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-767"><a href="{{site.baseurl}}/category/tutorial/">Tutorials</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663"><a href="{{site.baseurl}}/mirror-docs/sample-data-specifications/">Sample data spec</a></li>
 </ul>
 </li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-589"><a href="https://secure.jimulabs.com/buy">Buy</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769"><a href="/support/">Support</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-568"><a href="/posts/">Blog</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-594"><a href="/about-us/">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-769"><a href="{{site.baseurl}}/support/">Support</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-568"><a href="{{site.baseurl}}/posts/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-594"><a href="{{site.baseurl}}/about-us/">About</a></li>
 </ul></div><!-- #mobile-menu -->
     
     <div id="slider-area" class="clearfix">
@@ -679,7 +680,7 @@ blockquote, blockquote p {
   ga('send', 'pageview');
 
 </script></div>
-<link rel='stylesheet' id='style-plugins-group-css' href='/css/style-plugins-group-css.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-plugins-group-css' href='{{site.baseurl}}/css/style-plugins-group-css.css' type='text/css' media='all' />
 <script type='text/javascript'>
 /* <![CDATA[ */
 var emodal_themes = [];
@@ -691,19 +692,18 @@ emodal_themes = {"1":{"id":"1","theme_id":"1","overlay":{"background":{"color":"
 var tocplus = {"visibility_show":"show","visibility_hide":"hide","width":"Auto"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/js/ui.js'></script>
+<script type='text/javascript' src='{{site.baseurl}}/js/ui.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var mo_theme = {"name_required":"Please provide your name","name_format":"Your name must consist of at least 5 characters","email_required":"Please provide a valid email address","url_required":"Please provide a valid URL","phone_required":"Minimum 5 characters required","human_check_failed":"The input the correct value for the equation above","message_required":"Please input the message","message_format":"Your message must be at least 15 characters long","success_message":"Your message has been sent. Thanks!","blog_url":"http:\/\/jimulabs.com","loading_portfolio":"Loading the next set of posts...","finished_loading":"No more items to load..."};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/js/main.js'></script>
+<script type='text/javascript' src='{{site.baseurl}}/js/main.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var countVars = {"disqusShortname":"jimulabs"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='/js/disqus.js'></script>
 
 </body>
 </html>

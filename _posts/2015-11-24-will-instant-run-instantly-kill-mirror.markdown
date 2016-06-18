@@ -16,7 +16,7 @@ _This post was meant to be an internal note, but we decided to think aloud and o
 
 
 
-[![Instant run tweet](/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-1.34.06-PM.png)](/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-1.34.06-PM.png)
+[![Instant run tweet]({{site.baseurl}}/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-1.34.06-PM.png)]({{site.baseurl}}/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-1.34.06-PM.png)
 
 
 
@@ -40,7 +40,7 @@ So what are we going to do with Mirror? One thing is for sure, Android Studio 2.
 
 
 
-The key difference between Mirror and other similar tools is that it's mainly a tool for building UI, rather than previewing the entire app. That's why we have [sample data](/mirror-docs/mirror-tutorial/) and [Mirror Sandbox](https://github.com/jimulabs/mirror-sandbox). With Mirror, you can create full-fidelity prototypes before coding adapters or fragments. We think this prototype-first approach leads to more effective collaboration across the team.
+The key difference between Mirror and other similar tools is that it's mainly a tool for building UI, rather than previewing the entire app. That's why we have [sample data]({{site.baseurl}}/mirror-docs/mirror-tutorial/) and [Mirror Sandbox](https://github.com/jimulabs/mirror-sandbox). With Mirror, you can create full-fidelity prototypes before coding adapters or fragments. We think this prototype-first approach leads to more effective collaboration across the team.
 
 
 

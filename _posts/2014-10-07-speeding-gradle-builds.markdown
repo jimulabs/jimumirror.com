@@ -214,13 +214,13 @@ This last point is more about workflow than Gradle specifically. Often frequent 
 
 
 
-The Android Studio layout preview pane is the most obvious example of this sort of tool. It gives you a decent preview of your layout, but it's often incomplete and doesn't show how your different layouts actually fit together. We built [Mirror](/) to stretch this rebuild-free development style _much_ further, letting you view and work on the entire UI of your app without needing to rebuild and reinstall it. Just change your layouts, styles, assets or Java/Kotlin code of your custom views, a preview of your layouts or animations will be ready on the device in seconds.
+The Android Studio layout preview pane is the most obvious example of this sort of tool. It gives you a decent preview of your layout, but it's often incomplete and doesn't show how your different layouts actually fit together. We built [Mirror]({{site.baseurl}}/) to stretch this rebuild-free development style _much_ further, letting you view and work on the entire UI of your app without needing to rebuild and reinstall it. Just change your layouts, styles, assets or Java/Kotlin code of your custom views, a preview of your layouts or animations will be ready on the device in seconds.
 
 
 
 
 
-If it sounds like this would save you time and improve your work, download the [Android Studio plugin](/mirror-downloads). It's free to try! If you want to learn more, check out [our homepage](/) or the [Mirror tutorial](/mirror-tutorial).
+If it sounds like this would save you time and improve your work, download the [Android Studio plugin]({{site.baseurl}}/mirror-downloads). It's free to try! If you want to learn more, check out [our homepage]({{site.baseurl}}/) or the [Mirror tutorial]({{site.baseurl}}/mirror-tutorial).
 
 
 

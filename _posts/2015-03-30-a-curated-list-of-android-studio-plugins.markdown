@@ -41,7 +41,7 @@ Like many of you, we started with Eclipse and made the transition over time. I m
 
 
 
-There is a common issue shared by Studio and Eclipse (and pretty much all IDEs): the UI sometimes freezes due to the heavy-lifting in the background. [Increasing heap size](http://geek.moneylover.me/android-studio-eliminate-shutter-n-lag/) is often an effective cure. Besides, many developers are hesitant to switch to Android Studio because of the performance of Gradle. We wrote a [blog post](/2014/10/speeding-gradle-builds/) to help you tune it up.
+There is a common issue shared by Studio and Eclipse (and pretty much all IDEs): the UI sometimes freezes due to the heavy-lifting in the background. [Increasing heap size](http://geek.moneylover.me/android-studio-eliminate-shutter-n-lag/) is often an effective cure. Besides, many developers are hesitant to switch to Android Studio because of the performance of Gradle. We wrote a [blog post]({{site.baseurl}}/2014/10/speeding-gradle-builds/) to help you tune it up.
 
 
 
@@ -233,7 +233,7 @@ As mentioned, I've been using Eclipse key bindings for quite a while. After conf
 
 
 
-![key-promoter](/wp-content/uploads/2015/03/key-promoter.png)
+![key-promoter]({{site.baseurl}}/wp-content/uploads/2015/03/key-promoter.png)
 
 
 
@@ -257,7 +257,7 @@ Mirror helps us quickly build layouts, custom views and animations with live, in
 
 
 
-I'll refrain from talking about our own thing too much here and leave you with a link: [http://jimulabs.com](/).
+I'll refrain from talking about our own thing too much here and leave you with a link: [http://jimulabs.com]({{site.baseurl}}/).
 
 
 
@@ -347,7 +347,7 @@ For your convenience, here's a list of all the links mentioned in the post:
     * [Eliminate Lags & Stutters in Android Studio](http://geek.moneylover.me/android-studio-eliminate-shutter-n-lag/)
 
 
-    * [Speeding up Gradle builds](/2014/10/speeding-gradle-builds/)
+    * [Speeding up Gradle builds]({{site.baseurl}}/2014/10/speeding-gradle-builds/)
 
 
     * [Andmore, BlackBerry's ADT fork](http://projects.eclipse.org/projects/tools.andmore)
@@ -395,7 +395,7 @@ For your convenience, here's a list of all the links mentioned in the post:
     * [Key promoter](https://plugins.jetbrains.com/plugin/1003)
 
 
-    * [jimu Mirror](/)
+    * [jimu Mirror]({{site.baseurl}}/)
 
 
 
@@ -430,7 +430,7 @@ Linton Ye is a developer, toolsmith, UI designer, entrepreneur and lifelong lear
 
 
 
-Linton writes about Android on [jimu Labs' blog](/posts).  Follow him on Google+ ([+LintonYe](google.com/+LintonYe)) or Twitter ([@lintonye](https://twitter.com/lintonye)).
+Linton writes about Android on [jimu Labs' blog]({{site.baseurl}}/posts).  Follow him on Google+ ([+LintonYe](google.com/+LintonYe)) or Twitter ([@lintonye](https://twitter.com/lintonye)).
 
 
 

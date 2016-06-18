@@ -21,7 +21,7 @@ id: 591
 
 
 
-[[ Release Notes ]](/mirror-downloads/#change-log)  |  [[ Tutorial ]](/mirror-tutorial)  |  [[ Sample Data Specification ]](/sample-data-specifications) | [[ Custom Attributes ]](/sample-data-attributes/)
+[[ Release Notes ]]({{site.baseurl}}/mirror-downloads/#change-log)  |  [[ Tutorial ]]({{site.baseurl}}/mirror-tutorial)  |  [[ Sample Data Specification ]]({{site.baseurl}}/sample-data-specifications) | [[ Custom Attributes ]]({{site.baseurl}}/sample-data-attributes/)
 
 
 
@@ -31,7 +31,7 @@ id: 591
 
 
 
-[[ Installation Guide ]](/mirror-android-studio-plugin-installation-guide/) | [[ Mirror.js guide for designers ]](/mirror-js-designer-guide)
+[[ Installation Guide ]]({{site.baseurl}}/mirror-android-studio-plugin-installation-guide/) | [[ Mirror.js guide for designers ]]({{site.baseurl}}/mirror-js-designer-guide)
 
 
 
@@ -41,7 +41,7 @@ id: 591
 
 
 
-[[ Installation & System Requirements ]](/installation) |  [[ Project Setup ]](/project-configuration-in-mirror-server)
+[[ Installation & System Requirements ]]({{site.baseurl}}/installation) |  [[ Project Setup ]]({{site.baseurl}}/project-configuration-in-mirror-server)
 
 
 

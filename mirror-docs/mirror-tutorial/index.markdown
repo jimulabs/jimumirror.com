@@ -44,16 +44,16 @@ We've prepared a small sample project you can use if you want to play with the e
 
 
 
-If you're using our [Android Studio plugin](/mirror-downloads/) (highly recommended!) there's nothing to configure to use get started; Mirror will automatically find your modules and figure out your project structure (currently only Gradle-based projects created with Android Studio are supported). If you're using the standalone version of Mirror, see our separate [setup guide](/project-configuration-in-mirror-server/).
+If you're using our [Android Studio plugin]({{site.baseurl}}/mirror-downloads/) (highly recommended!) there's nothing to configure to use get started; Mirror will automatically find your modules and figure out your project structure (currently only Gradle-based projects created with Android Studio are supported). If you're using the standalone version of Mirror, see our separate [setup guide]({{site.baseurl}}/project-configuration-in-mirror-server/).
   
 
-![Mirror Android Studio plugin](/wp-content/uploads/2014/08/as-plugin-window-small.png)
+![Mirror Android Studio plugin]({{site.baseurl}}/wp-content/uploads/2014/08/as-plugin-window-small.png)
   
 
 Click the **"Start/Stop Mirror"** button in the Android Studio toolbar (standalone users: the big **Start** button). If you have a device attached to your computer with debugging enabled, Mirror will install our previewing application on your device, and in a couple of seconds it will launch and display a list of the layouts in your application. Select one of these layouts to see what it looks like.
   
 
-![List of screens in sample project](/wp-content/uploads/2014/08/geny_sla_short.png)
+![List of screens in sample project]({{site.baseurl}}/wp-content/uploads/2014/08/geny_sla_short.png)
   
 
 
@@ -111,10 +111,10 @@ Android Studio supports this to some extent with [tools attributes](http://tools
 Mirror also supports another, more powerful way to simulate dynamic data in static previews, called **sample data**. If you look in your main app module, you'll see that there's a new `mirror` directory. This contains a collection of files with the same names as layouts in your application. These are **screen files**, and each corresponds to a screen that you can preview using Mirror.
   
 
-![Mirror screens](/wp-content/uploads/2014/08/plugin_window_screens.png)
+![Mirror screens]({{site.baseurl}}/wp-content/uploads/2014/08/plugin_window_screens.png)
   
 
-There are a number of special elements in a screen file (see the full spec [here](/sample-data-specifications/)), but most elements in the screen file correspond to views in a layout. These elements can be used to populate views with data. For example, suppose we have a layout called `list_item` with this code:
+There are a number of special elements in a screen file (see the full spec [here]({{site.baseurl}}/sample-data-specifications/)), but most elements in the screen file correspond to views in a layout. These elements can be used to populate views with data. For example, suppose we have a layout called `list_item` with this code:
 
 
 
@@ -155,7 +155,7 @@ In the corresponding screen file (by default `mirror/list_item.xml`) we can _pop
 Generally, a drawable used in development like this isn't intended to actually be included in the application. You can put resources like this in the `mirror/res` directory, which behaves exactly like the regular resource directory (ex. different drawables for different device resolutions) but will only be used by Mirror and won't be included in your built application.
   
 
-![Mirror resource directory](/wp-content/uploads/2014/08/plugin_mirror_res.png)
+![Mirror resource directory]({{site.baseurl}}/wp-content/uploads/2014/08/plugin_mirror_res.png)
   
 
 
@@ -249,7 +249,7 @@ In this example we have a list of people, and each person in the list will have 
 Now if you open the `list` screen in the Mirror app, you'll see a list with three items:
   
 
-![Mascot list view](/wp-content/uploads/2014/08/geny_list_view_short.png)
+![Mascot list view]({{site.baseurl}}/wp-content/uploads/2014/08/geny_list_view_short.png)
   
 
 
@@ -342,7 +342,7 @@ This is a common pattern; at runtime, `content_frame` would be filled in with `t
 Opening `container` in the Mirror app on your device will show the whole UI exactly as in will appear in the final app.
   
 
-![Container with text content](/wp-content/uploads/2014/08/geny_container_short.png)
+![Container with text content]({{site.baseurl}}/wp-content/uploads/2014/08/geny_container_short.png)
   
 
 So far we've had one screen file for each layout in our project, but we can be more flexible than this. Suppose we have another layout, `image_content`, that we intend to put inside `container` as well:
@@ -389,7 +389,7 @@ In our app, we sometimes want to show text content, and sometimes image content.
 Now the Mirror app will show both `container` and `container_with_image` as previewable screens. We can check out both, or show them to a client, without needing to change any files.
   
 
-![Container with image content](/wp-content/uploads/2014/08/geny_container_with_image_short.png)
+![Container with image content]({{site.baseurl}}/wp-content/uploads/2014/08/geny_container_with_image_short.png)
   
 
 
@@ -470,10 +470,10 @@ And here's a screen file putting everything together:
 Open up `view_pager` on the device to see how it looks:
   
 
-![View pager screen](/wp-content/uploads/2014/08/geny_view_pager_short.png)
+![View pager screen]({{site.baseurl}}/wp-content/uploads/2014/08/geny_view_pager_short.png)
   
 
-Hopefully this gives you an idea of how far you can go creating accurate previews with Mirror with a very small amount of extra work. Check out and explore the [sample data spec](/sample-data-specifications/) for a complete list of what you can do using Mirror.
+Hopefully this gives you an idea of how far you can go creating accurate previews with Mirror with a very small amount of extra work. Check out and explore the [sample data spec]({{site.baseurl}}/sample-data-specifications/) for a complete list of what you can do using Mirror.
 
 
 

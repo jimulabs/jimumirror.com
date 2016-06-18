@@ -22,15 +22,15 @@ Just watch the screencast below and you'll see.  The source code of the game (wi
 
 
 
-If you are not familiar with Mirror Sandbox, check out [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/).
+If you are not familiar with Mirror Sandbox, check out [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/).
+
+
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/aeb0Mzj8oF4?rel=0" frameborder="0" allowfullscreen></iframe></p>
 
 
 
 
-
-
-
-For more details about Mirror Sandbox, check out [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/).
+For more details about Mirror Sandbox, check out [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/).
 
 
 

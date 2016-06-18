@@ -1,0 +1,9 @@
+---
+layout: page
+title: View Post By Categories
+type: index
+---
+
+{% for category in site.categories %}
+	<li> <a href = "{{site.baseurl}}/category/{{ category|first }}"> {{category|first}} </a> </li>
+{% endfor %}

@@ -2,10 +2,16 @@
 <!DOCTYPE html>
 
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
-<link rel='stylesheet' id='style-responsive-group-css' href='/css/style-responsive-group-css.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-responsive-group-css' href='{{site.baseurl}}/css/style-responsive-group-css.css' type='text/css' media='all' />
 
 {% include header.html %}
+{% if page.layout == "post" %}
+    <div id="title-area" class="clearfix"><div class="inner"><h1 class="page-title entry-title"> Blog </h1></div></div> <!-- title-area -->
+{% elsif page.type == "author-index" %}
+	{% include author-header.html %}
+{% else %}
     <div id="title-area" class="clearfix"><div class="inner"><h1 class="page-title entry-title"> {{ page.title }} </h1></div></div> <!-- title-area -->
+{% endif %}
     <div id="main" class="clearfix">
     <div class="inner clearfix">
 
@@ -13,25 +19,7 @@
     <div id="content" class="twelvecol">
 {% else %}
 <div id="content" class="ninecol ">
-    <div id="breadcrumbs"><a href="/">Home</a>
-     {% assign urlParts = page.url | split: "/" %}
-     {% assign currentUrl = "/" %}
-     {% for i in urlParts %}
-     	{% if i == "" or i == "posts" %}
-     	  {% continue %}
-     	{% elsif i == urlParts.last %}
-     	<span class="sep"> / </span> {{ page.title }} </div> <!-- #breadcrumbs -->
-     	{% elsif i == "mirror-docs" %}
-     	     	{% assign currentUrl = "/mirror-docs/" %}
-     		    <span class="sep"> / </span>
-     		    <a href="{{currentUrl}}"> Documents </a>
-     	{% else %}
-     	<span class="sep"> / </span>
-     	{% assign currentUrl = {{ currentUrl || append: i }} %}
-     	<a href="{{currentUrl}}">{{i}}</a>
-     	{% assign currentUrl = {{ currentUrl || append:"/"}} %}
-     	{% endif %}
-     {% endfor %}
+{% include site-navigator.html %}
 {% endif %}                
                 <div class="entry-content">
                     {{ content }}
@@ -40,26 +28,42 @@
             
             
             
-{% if page.comments == true %}
-<div id="disqus_thread">
-</div>
+{% if page.comments %}
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "http://jimulabs.com{{page.url}}";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = page.id; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//jimulabs.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
 
 
-
-        
     
     
 </div><!-- #content -->
 
 {% if page.fullscreen != true %}
-<div class="sidebar-right-nav threecol last"><div id="sidebar-primary" class="sidebar clearfix fullwidth"><div id="text-9" class="widget widget_text widget-widget_text"><div class="widget-wrap widget-inside">			<div class="textwidget"><a id="download-mirror" class="button orange medium sidebar-button" href="/mirror-downloads">Try Mirror</a>
+<div class="sidebar-right-nav threecol last">
+<div id="sidebar-primary" class="sidebar clearfix fullwidth">
+<div id="text-9" class="widget widget_text widget-widget_text">
+<div class="widget-wrap widget-inside">			
+<div class="textwidget"><a id="download-mirror" class="button orange medium sidebar-button" href="{{site.baseurl}}/mirror-downloads">Try Mirror</a>
 
 <script>
 
   console.log("location:"+location.pathname)
 
-   if (location.pathname === '/mirror-downloads/' ) {
+   if (location.pathname === '{{site.baseurl}}/mirror-downloads/' ) {
 
      jQuery('#download-mirror').prop('text', 'Buy Mirror');
 
@@ -95,17 +99,6 @@ emodal_themes = {"1":{"id":"1","theme_id":"1","overlay":{"background":{"color":"
 /* ]]> */
 </script>
 
-<script type='text/javascript'>
-/* <![CDATA[ */
-var embedVars = {"disqusConfig":{"platform":"wordpress@4.5.2","language":""},"disqusIdentifier":"{{page.id}} http:\/\/jimulabs.com\/?page_id={{page.id}}","disqusShortname":"jimulabs","disqusTitle":"{{page.title}}","disqusUrl":"http:\/\/jimulabs.com\/{{page.permalink}}\/","options":{"manualSync":false},"postId":{{page.id}}};
-/* ]]> */
-</script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var countVars = {"disqusShortname":"jimulabs"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='/js/disqus.js'></script>
 
 
 </body>

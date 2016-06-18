@@ -10,7 +10,7 @@ title: Mirror.js Overview
 id: 534
 ---
 
-## Note: We have stopped the development of Mirror.js and put what we've learned into Mirror Sandbox, a set of new features based on Java code hot-swapping. See [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/) for details.
+## Note: We have stopped the development of Mirror.js and put what we've learned into Mirror Sandbox, a set of new features based on Java code hot-swapping. See [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/) for details.
 
 
 
@@ -63,7 +63,7 @@ Mirror.js extends the capabilities of the screens and sample data that Mirror al
 
 
 
-When previewed using Mirror, this screen file will load the `profile` layout resource. The image at the given path will be loaded into the ImageView with id `avatar`, and the TextView with id `name` will be filled with the given string resource. For a more complete introduction to Mirror, screens, and sample data, see [the Mirror tutorial](/mirror-tutorial/).
+When previewed using Mirror, this screen file will load the `profile` layout resource. The image at the given path will be loaded into the ImageView with id `avatar`, and the TextView with id `name` will be filled with the given string resource. For a more complete introduction to Mirror, screens, and sample data, see [the Mirror tutorial]({{site.baseurl}}/mirror-tutorial/).
 
 
 

@@ -28,7 +28,7 @@ Opening up `MirrorMail/src/main/res/layout/mail_list_view_pager.xml`, we find th
 
 
 
-[![a populated, swipeable ViewPager](/wp-content/uploads/2014/03/Capture-182x300.png)](/wp-content/uploads/2014/03/Capture.png)Doesn't look like much, does it? However, if we load the layout in Mirror, we will find it is a populated, swipeable `ViewPager`. How is this set up?
+[![a populated, swipeable ViewPager]({{site.baseurl}}/wp-content/uploads/2014/03/Capture-182x300.png)]({{site.baseurl}}/wp-content/uploads/2014/03/Capture.png)Doesn't look like much, does it? However, if we load the layout in Mirror, we will find it is a populated, swipeable `ViewPager`. How is this set up?
 
 
 
@@ -103,7 +103,7 @@ There are lots of items in the list, so we have truncated it to inspect just one
 
 
 
-[![ava1](/wp-content/uploads/2014/03/ava1.png)](/wp-content/uploads/2014/03/ava1.png)Look at `<avatar>` and find the matching element in the layout file. We can see in our layout file that "avatar" is the ID of a custom view called `com.jimulabs.samples.mirrormail.CircularImageView`. Mirror will try to set any valid attribute it finds in a screen file, just like Android sets attributes from a layout file; when it encounters the attribute `src="images/ava1.png"`, it will set the `CircularImageView`'s `src` attribute to `mirror/images/ava1.png` (in this case a portrait of Sir Paul).
+[![ava1]({{site.baseurl}}/wp-content/uploads/2014/03/ava1.png)]({{site.baseurl}}/wp-content/uploads/2014/03/ava1.png)Look at `<avatar>` and find the matching element in the layout file. We can see in our layout file that "avatar" is the ID of a custom view called `com.jimulabs.samples.mirrormail.CircularImageView`. Mirror will try to set any valid attribute it finds in a screen file, just like Android sets attributes from a layout file; when it encounters the attribute `src="images/ava1.png"`, it will set the `CircularImageView`'s `src` attribute to `mirror/images/ava1.png` (in this case a portrait of Sir Paul).
 
 
 

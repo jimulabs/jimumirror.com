@@ -10,9 +10,9 @@ categories:
 - Features
 ---
 
-_Written in collaboration with [Matt](/author/matt/)._
+_Written in collaboration with [Matt]({{site.baseurl}}/author/matt/)._
 
-Making good use of sample data is key to getting the most out of Mirror. With sample data you can fill your layouts with text, images, and other values to simulate conditions in your running app. This lets Mirror show you exactly what your app will look like when its finished. Mirror automatically creates sample data files that correspond to the layouts in your resource directory. In Mirror 1.3 we've made these starting files a lot more useful so you can get started with sample data on your projects quickly. For information on how to get started with sample data and what you can do with it, see our [tutorial](/mirror-tutorial/) and [sample data spec](/sample-data-specifications/).
+Making good use of sample data is key to getting the most out of Mirror. With sample data you can fill your layouts with text, images, and other values to simulate conditions in your running app. This lets Mirror show you exactly what your app will look like when its finished. Mirror automatically creates sample data files that correspond to the layouts in your resource directory. In Mirror 1.3 we've made these starting files a lot more useful so you can get started with sample data on your projects quickly. For information on how to get started with sample data and what you can do with it, see our [tutorial]({{site.baseurl}}/mirror-tutorial/) and [sample data spec]({{site.baseurl}}/sample-data-specifications/).
 
 Let's take a look at the MirrorMail sample project that's included with Mirror. This app has an activity_list layout that displays a list of emails in an inbox. Included in that layout is a ListView for showing the emails:
 
@@ -96,7 +96,7 @@ It's pretty easy to figure out what's going on here: in mail_list_item, tags hav
 
 Now if you check out the Mirror app on your attached device or emulator and select activity_list, you should see a pretty useful preview of your layouts:
 
-[![Capture2](/wp-content/uploads/2014/03/Capture2-182x300.png)](/wp-content/uploads/2014/03/Capture2.png)
+[![Capture2]({{site.baseurl}}/wp-content/uploads/2014/03/Capture2-182x300.png)]({{site.baseurl}}/wp-content/uploads/2014/03/Capture2.png)
 
 I hope this post has shown how generated sample data makes it easy to start developing with Mirror quickly. We plan on further improving the generated sample data in the future, and would love to hear any comments or feedback you have. Leave a comment in our [Google+ community](https://plus.google.com/u/0/communities/100032204836569153341) or send us an email at [support@jimulabs.com](mailto:support@jimulabs.com).
 

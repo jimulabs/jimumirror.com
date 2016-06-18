@@ -42,7 +42,7 @@ To enable Stetho in Mirror previews, you'll need to use the [mirror-sandbox](htt
 
 
 Watch it in action below:
-
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/Rzq8FjxIpJw?rel=0" frameborder="0" allowfullscreen></iframe></p>
 
 
 

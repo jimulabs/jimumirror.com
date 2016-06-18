@@ -10,7 +10,7 @@ title: 'Mirror: Older versions'
 id: 812
 ---
 
-By downloading jimu Mirror on this site or via JetBrain's plugin repository, you agree to jimu Labs' [End User License Agreement](/mirror-eula)
+By downloading jimu Mirror on this site or via JetBrain's plugin repository, you agree to jimu Labs' [End User License Agreement]({{site.baseurl}}/mirror-eula)
 
 
 

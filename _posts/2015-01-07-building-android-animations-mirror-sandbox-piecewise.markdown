@@ -51,7 +51,7 @@ Typical use cases include:
 
 
 See the video below for a quick tutorial (It's 6-min but it's worth watching till the end, I promise. :))
-
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/r4r5g4tSwW0?rel=0" frameborder="0" allowfullscreen></iframe></p>
 
 
 
@@ -123,7 +123,7 @@ Mirror Sandbox is designed to help you build the user interface of your app, so 
 
 
 
-Remember [Mirror.js](/mirrorjs-preview/)? It works pretty well as a prototyping tool and JavaScript scripts can be loaded and executed live as they are being edited. However, when it's time to code the actual production app, you don't want to reimplement the animations in Java from scratch, right? (See my talk at Droidcon London 2014, [Kill Design Specs](http://www.slideshare.net/lintonye/kill-design-specs-droidcon-london-2014))
+Remember [Mirror.js]({{site.baseurl}}/mirrorjs-preview/)? It works pretty well as a prototyping tool and JavaScript scripts can be loaded and executed live as they are being edited. However, when it's time to code the actual production app, you don't want to reimplement the animations in Java from scratch, right? (See my talk at Droidcon London 2014, [Kill Design Specs](http://www.slideshare.net/lintonye/kill-design-specs-droidcon-london-2014))
 
 
 
@@ -135,7 +135,7 @@ In a rainy morning, I was contemplating how we could easily convert JavaScript s
 
 
 
-Also we assumed that, because of the wide use of JavaScript in web design, it should be easier for designers compared to Java. But is that really the case? In fact writing Java code CAN be easier thanks to the awesome IDE support: error checking, code complete, quick access to documentation etc. My current hypothesis: people who can write JavaScript code will be able to at least write script-like Java code with proper tool support and good examples, at a higher speed. BTW, I made far fewer errors when making the video above in comparison to the [Mirror.js video](/mirrorjs-preview/). Which one is easier, Java or JavaScript? What do you think?
+Also we assumed that, because of the wide use of JavaScript in web design, it should be easier for designers compared to Java. But is that really the case? In fact writing Java code CAN be easier thanks to the awesome IDE support: error checking, code complete, quick access to documentation etc. My current hypothesis: people who can write JavaScript code will be able to at least write script-like Java code with proper tool support and good examples, at a higher speed. BTW, I made far fewer errors when making the video above in comparison to the [Mirror.js video]({{site.baseurl}}/mirrorjs-preview/). Which one is easier, Java or JavaScript? What do you think?
 
 
 

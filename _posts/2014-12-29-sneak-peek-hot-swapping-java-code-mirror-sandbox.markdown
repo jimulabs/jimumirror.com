@@ -29,6 +29,7 @@ According to my unscientific tests with a sample project (and the [iosched2014 a
 
 
 Watch the video below and let us know what you think. (The text entry portion of the video was sped up but the waiting and animations were not. You can compare the blinking speed of the cursor.)
+<p><iframe width="560" height="315" src="//www.youtube.com/embed/DMev1tU8pus?rel=0&#038;controls=0" frameborder="0" allowfullscreen></iframe></p>
 
 
 
@@ -56,10 +57,6 @@ Mirror Sandbox will be in private beta soon. If you want to give it a try before
 
 
     
-
-
-
-    Email Address 
     
 
 

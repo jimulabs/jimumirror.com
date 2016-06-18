@@ -9,7 +9,7 @@ permalink: /mirror-downloads/
 ---
 
 
-By downloading jimu Mirror on this site or via JetBrain's plugin repository, you agree to jimu Labs' [End User License Agreement](/mirror-eula)
+By downloading jimu Mirror on this site or via JetBrain's plugin repository, you agree to jimu Labs' [End User License Agreement]({{site.baseurl}}/mirror-eula)
 
 
 
@@ -80,7 +80,7 @@ Tip: if your projects are gradle-based, but you want to edit the files using oth
 
 
 
-**If your project uses third-party libraries and library projects, Mirror tries its best to detect library locations but manual configuration may still be needed. See [this page](/project-configuration-in-mirror-server/) for details. The Android Studio plugin does a much better job detecting project configuration because of the information available in Studio.**
+**If your project uses third-party libraries and library projects, Mirror tries its best to detect library locations but manual configuration may still be needed. See [this page]({{site.baseurl}}/project-configuration-in-mirror-server/) for details. The Android Studio plugin does a much better job detecting project configuration because of the information available in Studio.**
 
 
 
@@ -104,7 +104,7 @@ Tip: if your projects are gradle-based, but you want to edit the files using oth
 
 
 
-[[ Installation & System Requirements ]](/installation)  [[ Project Setup ]](/project-configuration-in-mirror-server)
+[[ Installation & System Requirements ]]({{site.baseurl}}/installation)  [[ Project Setup ]]({{site.baseurl}}/project-configuration-in-mirror-server)
 
 
 
@@ -132,7 +132,7 @@ Tip: if your projects are gradle-based, but you want to edit the files using oth
 
 
 
-See this [tutorial](/mirror-tutorial) that will help you create realistic app previews with Mirror. More detailed documentation can be found [here](/mirror-docs/).
+See this [tutorial]({{site.baseurl}}/mirror-tutorial) that will help you create realistic app previews with Mirror. More detailed documentation can be found [here]({{site.baseurl}}/mirror-docs/).
 
 
 
@@ -347,7 +347,7 @@ See this [tutorial](/mirror-tutorial) that will help you create realistic app pr
 
 
 
-  * Mirror now calls the static method `$init(Context)` in your sandbox class. In this method, you can put initialization code that needs to run before views are created. This makes it possible to run Mirror together with Stetho. See [the mirror-sandbox README](/mirror-sandbox/) for more details.
+  * Mirror now calls the static method `$init(Context)` in your sandbox class. In this method, you can put initialization code that needs to run before views are created. This makes it possible to run Mirror together with Stetho. See [the mirror-sandbox README]({{site.baseurl}}/mirror-sandbox/) for more details.
 
 
   * Fixed an issue that prevents reflections from running properly on Lollipop devices
@@ -380,10 +380,10 @@ See this [tutorial](/mirror-tutorial) that will help you create realistic app pr
 
 
 
-    * Java and Kotlin code hot-swapping! - See [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/) for more information.
+    * Java and Kotlin code hot-swapping! - See [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/) for more information.
 
 
-    * An REPL-esque environment for UI development with the "mirror-sandbox" library - See [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/) for more information.
+    * An REPL-esque environment for UI development with the "mirror-sandbox" library - See [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/) for more information.
 
 
 
@@ -504,6 +504,7 @@ See this [tutorial](/mirror-tutorial) that will help you create realistic app pr
 	</table>
 	</div>
 	</div>
+
 
 
   * Performance improvement. It's now faster to preview projects with lots of images.
@@ -917,6 +918,6 @@ Mirror 2.0 is easy to get started with and integrates with you and your team’s
 
 
 
-## [Older versions](/mirror-1-x-change-log/)
+## [Older versions]({{site.baseurl}}/mirror-1-x-change-log/)
 
 

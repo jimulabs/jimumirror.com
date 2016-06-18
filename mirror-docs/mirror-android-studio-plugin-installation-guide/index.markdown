@@ -28,25 +28,25 @@ Below are screenshots of this process:
 
 
 
-![as-configure](/wp-content/uploads/2014/09/as-configure.png)
+![as-configure]({{site.baseurl}}/wp-content/uploads/2014/09/as-configure.png)
 
 
 
 
 
-![as-plugins](/wp-content/uploads/2014/09/as-plugins.png)
+![as-plugins]({{site.baseurl}}/wp-content/uploads/2014/09/as-plugins.png)
 
 
 
 
 
-![as-browse](/wp-content/uploads/2014/09/as-browse.png)
+![as-browse]({{site.baseurl}}/wp-content/uploads/2014/09/as-browse.png)
 
 
 
 
 
-![as-install](/wp-content/uploads/2014/09/as-install.png)
+![as-install]({{site.baseurl}}/wp-content/uploads/2014/09/as-install.png)
 
 
 
@@ -66,13 +66,13 @@ Below are screenshots of this process:
 
 
 
-You can also [download the zip file](/mirror-downloads/) and install it. Remember, DO NOT extract the .zip file, or else you'll get an error. Most steps are the same as method 1, just choose `Install plugin from disk...` and pick the downloaded .zip file.
+You can also [download the zip file]({{site.baseurl}}/mirror-downloads/) and install it. Remember, DO NOT extract the .zip file, or else you'll get an error. Most steps are the same as method 1, just choose `Install plugin from disk...` and pick the downloaded .zip file.
 
 
 
 
 
-![as-install-from-disk](/wp-content/uploads/2014/09/as-install-from-disk.png)
+![as-install-from-disk]({{site.baseurl}}/wp-content/uploads/2014/09/as-install-from-disk.png)
 
 
 

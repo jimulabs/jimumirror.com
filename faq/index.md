@@ -75,7 +75,7 @@ Android Auto? Not sure until we have access to a device.
 
 
 
-Certainly! Check out [this post](/2015/04/setting-up-mirror-for-stetho/).
+Certainly! Check out [this post]({{site.baseurl}}/2015/04/setting-up-mirror-for-stetho/).
 
 
 
@@ -87,7 +87,7 @@ Certainly! Check out [this post](/2015/04/setting-up-mirror-for-stetho/).
 
 
 
-You can use `<_content>` tag to add fragments (see [this tutorial](/mirror-docs/mirror-tutorial/) for more details).
+You can use `<_content>` tag to add fragments (see [this tutorial]({{site.baseurl}}/mirror-docs/mirror-tutorial/) for more details).
 
 
 
@@ -114,7 +114,7 @@ You can use `<_content>` tag to add fragments (see [this tutorial](/mirror-docs/
 
 
 
-Check out [this tutorial](/2014/10/building-android-layouts-mirror-view-pagers/)
+Check out [this tutorial]({{site.baseurl}}/2014/10/building-android-layouts-mirror-view-pagers/)
 
 
 
@@ -158,7 +158,7 @@ Mirror relies on the Java naming convention to set the value of custom attribute
 
 	<textViewId allCaps="true" textColor="0xFF0000">
 
-See [this doc](/mirror-docs/sample-data-attributes/) for more details.
+See [this doc]({{site.baseurl}}/mirror-docs/sample-data-attributes/) for more details.
 
 
 
@@ -267,7 +267,7 @@ Mirror Sandbox is designed to help you build the user interface of your app, so 
 
 
 
-Show him or her [this report](/time-saved-using-mirror/). This information is available within Android Studio and tailored to your projects. Open the Mirror Console and you'll see.
+Show him or her [this report]({{site.baseurl}}/time-saved-using-mirror/). This information is available within Android Studio and tailored to your projects. Open the Mirror Console and you'll see.
 
 
 

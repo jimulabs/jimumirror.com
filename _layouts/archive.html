@@ -1,0 +1,10 @@
+---
+layout: page
+---
+
+  <ul class="post-list">
+    {% assign posts = page.posts | reverse %} 
+    {% for currentPost in page.posts %}
+		{% include post-entry.html %}		
+    {% endfor %}
+  </ul>

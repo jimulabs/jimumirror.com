@@ -10,7 +10,7 @@ title: Sample data specification
 id: 250
 ---
 
-[[ Tutorial ]](/mirror-tutorial)  | [[ Project Setup ]](/project-configuration-in-mirror-server) |  [ Sample Data Specification ]
+[[ Tutorial ]]({{site.baseurl}}/mirror-tutorial)  | [[ Project Setup ]]({{site.baseurl}}/project-configuration-in-mirror-server) |  [ Sample Data Specification ]
 
 
 
@@ -337,8 +337,8 @@ Attributes:
 | visibility | Can be one of “gone”, “visible” or “invisible” and controls the visibility of the referenced view. The view will not be visible but still take up space if set to “invisible”, but will not take up any space if set to “gone” |
 | textColor | If the referenced view is an instance of TextView then this attribute can be used to specify its text color. May be a color resource reference or a string of the form #RRGGBB #AARRGGBB ‘red’, ‘blue’, ‘green’, ‘black’, ‘white’, ‘gray’, ‘cyan’, ‘magenta’, ‘yellow’, ‘lightgray’, ‘darkgray’, ‘grey’, ‘lightgrey’, ‘darkgrey’, ‘aqua’, ‘fuschia’, ‘lime’, ‘maroon’, ‘navy’, ‘olive’, ‘purple’, ‘silver’, ‘teal’. |
 | layoutManager | If the referenced view is a RecyclerView then this attribute specifies the LayoutManager to use with that RecyclerView. Currently LinearLayoutManager and StaggeredGridLayoutManager are supported. For both managers the orientation can be specified. For the staggered grid manager you can also give the span count. <br>Examples: <br> `<recyclerViewId layoutManager="linear:horizontal"/>` <br> `<recyclerViewId layoutManager="linear:vertical"/>` <br> `<recyclerViewId layoutManager="staggeredGrid:vertical"/>` <br> `<recyclerViewId layoutManager="staggeredGrid:4:horizontal"/>` (4 is the span count) |
-| _*Android namespace attributes*_ | Most other android attributes for a view can be overridden in sample data, with some limitations. For a more complete description of how other attributes are supported in sample data see the [sample data attributes](/mirror-docs/sample-data-attributes/) document. <br> `<imageViewId adjustViewBounds="true"/>` <br> `<textViewId highlightColor="0xFF0000" allCaps="true" />` |
-| _*Custom attributes*_ | Mirror also supports setting custom attributes for custom views if a public setter exists for the attribute. For a more complete description of how other attributes are supported in sample data see the [sample data attributes](/mirror-docs/sample-data-attributes/) document. <br> `<myCustomViewId customColor="0x0F0F0F"/>` |
+| _*Android namespace attributes*_ | Most other android attributes for a view can be overridden in sample data, with some limitations. For a more complete description of how other attributes are supported in sample data see the [sample data attributes]({{site.baseurl}}/mirror-docs/sample-data-attributes/) document. <br> `<imageViewId adjustViewBounds="true"/>` <br> `<textViewId highlightColor="0xFF0000" allCaps="true" />` |
+| _*Custom attributes*_ | Mirror also supports setting custom attributes for custom views if a public setter exists for the attribute. For a more complete description of how other attributes are supported in sample data see the [sample data attributes]({{site.baseurl}}/mirror-docs/sample-data-attributes/) document. <br> `<myCustomViewId customColor="0x0F0F0F"/>` |
 
 
 

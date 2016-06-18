@@ -1,3 +1,7 @@
+---
+title: CSS stylesheet
+---
+
 a,a:active,a:visited{color:#dc4637}a:hover{color:#888}ul.post-list .byline a, ul.post-list .byline a:active, ul.post-list .byline a:visited{color:#DC4637 !important}ul.post-list .byline a:hover{color:#888 !important}.post-snippets .hentry .entry-title a:hover, ul.post-list .entry-title a:hover{color:#DC4637 !important}th{background:#dc4637}#primary-menu .hover-bg,#primary-menu>ul.menu>li:hover>ul.sub-menu{border-color:#DC4637}#content .hentry h2.entry-title a:hover{color:#dc4637}.byline span
 i{color:#dc4637}.entry-meta span
 i{color:#dc4637}.entry-meta span:hover

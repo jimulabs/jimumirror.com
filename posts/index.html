@@ -6,28 +6,8 @@ layout: page
 <div class="home">
 
   <ul class="post-list">
-    {% for post in paginator.posts %}
-    	<div class="entry-snippet">
-    		<h2 class="entry-title">
-    			<a href="{{post.url}}" title="{{post.title}}" rel="bookmark">{{post.title}}</a>
-    		</h2>
-    		<div class="entry-meta">
-    		 <span class="author vcard">Author: <a href="/author/{{post.author}}/" title="{{post.author}}">{{post.author}}</a></span>
-    		 <span class="published">On: <a href="{{/post.year/post.month/}}">{{ post.date | date: "%b %-d, %Y" }}</a></span>
-    		 <span class="category">Categories:  
-    		 {% for category in post.categories %}
-    		 <a href="/category/{{category}}" rel="tag">{{ category }}</a> </span>
-    		 {% endfor %}
-    		 </div>    		 <div class="entry-text-wrap nothumbnail">
-    		 <div class="entry-summary"> {{ post.excerpt }} </div>
-    		</div>
-    		<span class="read-more">
-    		<a class="button default" href="{{post.url}}" title="{{post.title}}">Read More</a></span>
-    		<br>
-    		<br>
-    	
-    	
-    	</div> <!-- .entry-snippet -->    		
+    {% for currentPost in paginator.posts %}
+		{% include post-entry.html %}		
     {% endfor %}
   </ul>
 </div>

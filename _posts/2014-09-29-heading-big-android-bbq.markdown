@@ -11,7 +11,7 @@ categories:
 - Story
 ---
 
-![Big Android BBQ](/wp-content/uploads/2014/09/babbq_912x290.jpg)
+![Big Android BBQ]({{site.baseurl}}/wp-content/uploads/2014/09/babbq_912x290.jpg)
 
 
 
@@ -41,7 +41,7 @@ Every year BABBQ chooses a charity to support through donations; this is a wonde
 
 
 
-We're excited to see conferences like BABBQ making charity an aspect of our community, and we'd like to help. From now until the BBQ jimu Labs will be collecting 50% of our revenue from sales of our product, [Mirror](/), and donating it to Rapha House at BABBQ. If you've been considering purchasing Mirror, now is a good time to do so while donating to a great cause at the same time. If you aren't interested in Mirror or already have a license, we encourage you to make a donation yourself, either directly [on the Rapha House website](https://www.raphahouse.org/take-action/donate) or in person at BABBQ.
+We're excited to see conferences like BABBQ making charity an aspect of our community, and we'd like to help. From now until the BBQ jimu Labs will be collecting 50% of our revenue from sales of our product, [Mirror]({{site.baseurl}}/), and donating it to Rapha House at BABBQ. If you've been considering purchasing Mirror, now is a good time to do so while donating to a great cause at the same time. If you aren't interested in Mirror or already have a license, we encourage you to make a donation yourself, either directly [on the Rapha House website](https://www.raphahouse.org/take-action/donate) or in person at BABBQ.
 
 
 

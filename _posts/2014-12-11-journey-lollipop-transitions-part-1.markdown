@@ -28,7 +28,7 @@ Rather than simple examples, my goal was to implement some real-world-ish effect
 
 
 
-![final-result](/wp-content/uploads/2014/12/final-result.gif)
+![final-result]({{site.baseurl}}/wp-content/uploads/2014/12/final-result.gif)
 
 
 
@@ -123,7 +123,9 @@ It's not without issues, though. For one thing, sometimes the entire transition 
 
 
 Also, while the shared view is moving, it covers everything on its path, including the views that are supposed to be above. As shown in the (slowed-down) video below, the top of the cyan FAB button is covered up (and hence the flickering), and even the system navigation bar!
-
+<div class="fivecol" style="float:none; margin-bottom:20px;">
+<iframe width="282" height="500" src="//www.youtube.com/embed/pClWvtlHprg?controls=0&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -209,15 +211,15 @@ Something like this:
 
 
 
-  fadeFab.setStartDelay(500);
-  ...
-  Fold foldTitleContainer = new Fold();
-  foldTitleContainer.addTarget(R.id.title_container);
-  ...
-  TransitionSet panelsSet = new TransitionSet();
-  panelsSet.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
-  panelsSet.addTransition(titleContainerSet);
-  panelsSet.addTransition(infoContainerSet);
+	  fadeFab.setStartDelay(500);
+ 	 ...
+	  Fold foldTitleContainer = new Fold();
+ 	 foldTitleContainer.addTarget(R.id.title_container);
+	  ...
+ 	 TransitionSet panelsSet = new TransitionSet();
+	  panelsSet.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
+	  panelsSet.addTransition(titleContainerSet);
+ 	 panelsSet.addTransition(infoContainerSet);
 
 
 
@@ -235,24 +237,24 @@ Here's a snippet:
 
 
 
-  <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
-      android:transitionOrdering="together">
-      <transitionSet android:transitionOrdering="sequential">
-          <transitionSet android:transitionOrdering="together">
-              <transition class="com.jimulabs.googlemusicmock.transition.Fold">
-                  <targets>
-                      <target android:targetId="@id/title_container" />
-                  </targets>
-              </transition>
-              <fade>
-                  <targets>
-                      <target android:targetId="@id/title" />
-                      <target android:targetId="@id/subtitle" />
-                  </targets>
-              </fade>
-          </transitionSet>
-    ...
-  </transitionSet>
+		<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:transitionOrdering="together">
+		    <transitionSet android:transitionOrdering="sequential">
+		        <transitionSet android:transitionOrdering="together">
+		            <transition class="com.jimulabs.googlemusicmock.transition.Fold">
+		                <targets>
+		                    <target android:targetId="@id/title_container" />
+		                </targets>
+		            </transition>
+		            <fade>
+		                <targets>
+		                    <target android:targetId="@id/title" />
+		                    <target android:targetId="@id/subtitle" />
+		                </targets>
+		            </fade>
+		        </transitionSet>
+		  ...
+		</transitionSet>
 
 
 
@@ -278,7 +280,9 @@ Anyways, we can inflate this transition and set it to the window:
 
 
 And here's what it looks like (without the reveal effect). There's some weird flickering at the beginning of the enter transition and I'll cover it in round 3 (yeah, I couldn't manage to solve it until round 3).
-
+<div class="fivecol" style="float:none; margin-bottom:20px;">
+<iframe width="282" height="500" src="//www.youtube.com/embed/6ywyDhEcxJA?controls=0&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -303,11 +307,11 @@ Let's come back to the reveal transition. Normally you would use `ViewAnimationU
 
 
 
-  @Override
-  public Animator onAppear(ViewGroup sceneRoot, View view, TransitionValues startValues, TransitionValues endValues) {
-      Animator animator = ViewAnimationUtils.createCircularReveal(view, mEpicenter.x, mEpicenter.y, mSmallRadius, mBigRadius);
-      return animator;
-  }
+	  @Override
+	  public Animator onAppear(ViewGroup sceneRoot, View view, TransitionValues startValues, TransitionValues endValues) {
+	      Animator animator = ViewAnimationUtils.createCircularReveal(view, mEpicenter.x, mEpicenter.y, mSmallRadius, mBigRadius);
+	      return animator;
+	  }
 
 
 
@@ -320,7 +324,9 @@ But if you run it -- oops, the app will crash with an `UnsupportedOperationExcep
 
 
 Here's what I've got so far (slowed down by 2x):
-
+<div class="fivecol" style="float:none; margin-bottom:20px;">
+<iframe width="282" height="500" src="//www.youtube.com/embed/GxhqaGAP3DI?controls=0&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 
@@ -340,7 +346,9 @@ Obviously, it isn't quite what I wanted. The reveal effect is hardly noticeable 
 
 
 So my approach was to set the yellow background to the `RelativeLayout` in `layout/activity_album_detail` instead. See the video below (and the code on the ["round-1" branch](https://github.com/jimulabs/google-music-mock/tree/round-1-window-content-transitions)):
-
+<div class="fivecol" style="float:none; margin-bottom:20px;">
+<iframe width="282" height="500" src="//www.youtube.com/embed/3NtcueSJCJo?controls=0&amp;rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 
 

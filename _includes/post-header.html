@@ -1,12 +1,20 @@
-    		<h2 class="entry-title">
-    			<a href="{{currentPost.url}}" title="{{currentPost.title}}" rel="bookmark">{{currentPost.title}}</a>
-    		</h2>
+ <!-- Look the author details up from the site config. -->
+{% assign author = site.data.authors[currentPost.author] %}
+{% if author %} 
+{% assign authorName = author.name %}
+{% else %}
+{% assign authorName = currentPost.author %}
+{% endif %}
+ 
     		<div class="entry-meta">
-    		 <span class="author vcard">Author: <a href="/author/{{currentPost.author}}/" title="{{currentPost.author}}">{{currentPost.author}}</a></span>
+    		 <span class="author vcard">Author: <a href="{{site.baseurl}}/author/{{currentPost.author}}/">{{ authorName }}</a></span>
     		 <span class="published">On: 
-    		 <a href="{{/currentPost.year/currentPost.month/}}">{{ currentPost.date | date: "%b %-d, %Y" }}</a></span>
+    		 {% assign urlParts = currentPost.url || split: "/" %}
+    		 {% assign toRemove = urlParts.last || append: "/" %}
+    		 <a href="{{site.baseurl}}{{ currentPost.url || remove: toRemove}}">{{ currentPost.date | date: "%b %-d, %Y" }}</a>
+    		 </span>
     		 <span class="category">Categories:  
     		 {% for category in currentPost.categories %}
-    		 <a href="/category/{{category}}" rel="tag">{{ category }}</a> </span>
+    		 <a href="{{site.baseurl}}/category/{{category}}" rel="tag">{{ category }}</a> </span>
     		 {% endfor %}
     		 </div>

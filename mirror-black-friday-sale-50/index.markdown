@@ -8,7 +8,7 @@ title: jimu Mirror Black Friday Sale 50% off!
 id: 712
 ---
 
-![mirror-BlackFridayDeals](/wp-content/uploads/2014/11/mirror-BlackFridayDeals-300x151.png)
+![mirror-BlackFridayDeals]({{site.baseurl}}/wp-content/uploads/2014/11/mirror-BlackFridayDeals-300x151.png)
 From now until Monday December 1, 2014, if you use the coupon code **BLACK** to purchase a Mirror license, you'll get 30% off.
 
 

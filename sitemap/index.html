@@ -1,0 +1,41 @@
+---
+layout: page
+title: Sitemap
+---
+<h2> Pages </h2>
+<ul class='pagelist' >
+{% assign pages = site.pages | sort: 'title' %}
+{% for p in pages %}
+	{% if p.url contains 'posts/page' %}
+		{% continue %}
+	{% elsif p.url contains 'mirror-docs/'%}
+		{% assign urlParts = p.url || split: "/" %}
+		{% if urlParts.last == "mirror-docs" %}
+		<li> <a href="{{site.baseurl}}{{p.url}}"> {{p.title}} </a> </li>
+		<ul class = 'children'>
+		{% for docPage in pages %}
+			{% if docPage.url contains 'mirror-docs/' and docPage.url != p.url %}
+			<li> <a href="{{site.baseurl}}{{docPage.url}}"> {{docPage.title}} </a></li>
+			{% endif %}
+		{% endfor %} </ul>
+		{% endif %}
+	{% elsif p.layout != null and p.layout != "post" and p.title != null and p.layout != "archive" and p.title != "View Posts By Categories" %}
+		<li> <a href="{{site.baseurl}}{{p.url}}"> {{p.title}} </a> </li>
+	{% endif %}
+{% endfor %}
+</ul>
+
+
+<h2>Posts by <a href= "{{site.baseurl}}/category">Category</a> </h2>
+{% for category in site.categories %}
+	<li> <strong class="category-title"> Category: <a href="{{site.baseurl}}/category/{{category|first}}"> {{category | first}} </a> </strong> </li>
+		<ul class='children'>
+		{% for catPosts in category %}
+		{% for catPost in catPosts %}
+			{% if catPost.title %}
+				<li><a href="{{site.baseurl}}{{ catPost.url }}">{{ catPost.title }}</a></li>
+			{% endif %}
+        {% endfor %}
+        {% endfor %}
+       </ul>
+{% endfor %}

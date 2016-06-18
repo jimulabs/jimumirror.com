@@ -70,10 +70,10 @@ id: 258
 
 
     
-  * [Support for populating fragments]( /2014/01/fragments-transparent-overlay-and-mirrorres-directory) (Premium only)
+  * [Support for populating fragments]({{site.baseurl}}/2014/01/fragments-transparent-overlay-and-mirrorres-directory) (Premium only)
 
     
-  * [Transparent overlay]( /2014/01/fragments-transparent-overlay-and-mirrorres-directory) (Premium only)
+  * [Transparent overlay]({{site.baseurl}}/2014/01/fragments-transparent-overlay-and-mirrorres-directory) (Premium only)
 
     
   * Better error message for parse errors
@@ -350,7 +350,7 @@ We've also added support for previewing action bars, so your app can look _exact
   * **Initial theme support**
 
     
-    * Mirror now uses the theme specified in manifest by default, and a different theme can be specified in the screen file using the new "theme" attribute. See [sample file spec](/sample-data-specifications/) and [tutorial](/mirror-tutorial/) for details.
+    * Mirror now uses the theme specified in manifest by default, and a different theme can be specified in the screen file using the new "theme" attribute. See [sample file spec]({{site.baseurl}}/sample-data-specifications/) and [tutorial]({{site.baseurl}}/mirror-tutorial/) for details.
 
     
     * At this point, the action bar and window attributes (background etc.) aren't updated until the preview is re-opened. We are working on an improvement.

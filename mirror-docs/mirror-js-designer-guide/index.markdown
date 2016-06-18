@@ -10,7 +10,7 @@ title: Mirror.js Setup Guide for Designers
 id: 643
 ---
 
-## Note: We have stopped the development of Mirror.js and put what we've learned into Mirror Sandbox, a set of new features based on Java code hot-swapping. See [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/) for details.
+## Note: We have stopped the development of Mirror.js and put what we've learned into Mirror Sandbox, a set of new features based on Java code hot-swapping. See [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/) for details.
 
 
 
@@ -34,7 +34,7 @@ This guide is intended to make it easier for Android designers to get started wi
 
 
 
-[Watch Mirror.js video](/mirrorjs-preview)
+[Watch Mirror.js video]({{site.baseurl}}/mirrorjs-preview)
 
 
 
@@ -170,13 +170,13 @@ Mirror is currently distributed as a plugin for Android Studio, so you'll need t
 
 
 
-First let's install Mirror. You can download Mirror from [this page](/mirrorjs-preview/) (click the "Download Android Studio plugin" button). Once Mirror has finished downloading, start up Android Studio. You'll see this screen, which shows up when you have no open projects:
+First let's install Mirror. You can download Mirror from [this page]({{site.baseurl}}/mirrorjs-preview/) (click the "Download Android Studio plugin" button). Once Mirror has finished downloading, start up Android Studio. You'll see this screen, which shows up when you have no open projects:
 
 
 
 
 
-![Welcome screen](/wp-content/uploads/2014/09/00_Welcome.png)
+![Welcome screen]({{site.baseurl}}/wp-content/uploads/2014/09/00_Welcome.png)
 
 
 
@@ -188,7 +188,7 @@ Click on "Configure", and then "Plugins". You'll see a list of installed plugins
 
 
 
-![Mirror Plugin setup](/wp-content/uploads/2014/09/01_Configure_Plugins.png)
+![Mirror Plugin setup]({{site.baseurl}}/wp-content/uploads/2014/09/01_Configure_Plugins.png)
 
 
 
@@ -200,7 +200,7 @@ Now that Mirror is installed let's open a project. We've prepared a sample proje
 
 
 
-![Checking out samples from Git](/wp-content/uploads/2014/09/02_Git_Checkout_Screen.png)
+![Checking out samples from Git]({{site.baseurl}}/wp-content/uploads/2014/09/02_Git_Checkout_Screen.png)
 
 
 
@@ -212,7 +212,7 @@ In the "Vcs repository URL" field, put `git@github.com:jimulabs/mirror-samples.g
 
 
 
-![Configuring the Git clone](/wp-content/uploads/2014/09/03_Git_Project_Window.png)
+![Configuring the Git clone]({{site.baseurl}}/wp-content/uploads/2014/09/03_Git_Project_Window.png)
 
 
 
@@ -224,7 +224,7 @@ Once the repository has been cloned, click "Yes" when when asked if you would li
 
 
 
-![Importing the sample project](/wp-content/uploads/2014/09/04_Import_Project.png)
+![Importing the sample project]({{site.baseurl}}/wp-content/uploads/2014/09/04_Import_Project.png)
 
 
 
@@ -236,13 +236,13 @@ We only want to import one of the sample projects for now, so click the "..." bu
 
 
 
-![Import project window highlighting the "..." button](/wp-content/uploads/2014/09/05_Import_Gradle_Project.png)
+![Import project window highlighting the "..." button]({{site.baseurl}}/wp-content/uploads/2014/09/05_Import_Gradle_Project.png)
 
 
 
 
 
-![Choosing the correct gradle file](/wp-content/uploads/2014/09/06_Choose_gradle_project.png)
+![Choosing the correct gradle file]({{site.baseurl}}/wp-content/uploads/2014/09/06_Choose_gradle_project.png)
 
 
 
@@ -254,7 +254,7 @@ Make sure "Use default gradle wrapper" is selected, and that your configuration 
 
 
 
-![Completed project import screen](/wp-content/uploads/2014/09/07_Configured_Import.png)
+![Completed project import screen]({{site.baseurl}}/wp-content/uploads/2014/09/07_Configured_Import.png)
 
 
 
@@ -272,7 +272,7 @@ Now you're ready to try out Mirror. Make sure you have a device plugged in with 
 
 
 
-![Showing Start Mirror button](/wp-content/uploads/2014/09/08_Opened_AS.png)
+![Showing Start Mirror button]({{site.baseurl}}/wp-content/uploads/2014/09/08_Opened_AS.png)
 
 
 
@@ -284,7 +284,7 @@ On your device you'll see a list of each of the screens in the sample project. L
 
 
 
-![Project outline slide_up_appear](/wp-content/uploads/2014/09/09_AS_slide_up_appear.png)
+![Project outline slide_up_appear]({{site.baseurl}}/wp-content/uploads/2014/09/09_AS_slide_up_appear.png)
 
 
 
@@ -308,7 +308,7 @@ If you don't see the changes on your device, make sure that Mirror is running in
 
 
 
-![10 Mirror toolbar](/wp-content/uploads/2014/09/10_Mirror_running.png)
+![10 Mirror toolbar]({{site.baseurl}}/wp-content/uploads/2014/09/10_Mirror_running.png)
 
 
 
@@ -320,7 +320,7 @@ If it is running, click on the "Open Mirror" button in the toolbar to open the M
 
 
 
-![Error report button](/wp-content/uploads/2014/09/11_Mirror_Console.png)
+![Error report button]({{site.baseurl}}/wp-content/uploads/2014/09/11_Mirror_Console.png)
 
 
 
@@ -340,10 +340,10 @@ This guide is just intended to get you set up with Android Studio and Mirror. Th
 
 
 
-  * The [Mirror tutorial](/mirror-tutorial/) will teach you how to prototype apps using Mirror
+  * The [Mirror tutorial]({{site.baseurl}}/mirror-tutorial/) will teach you how to prototype apps using Mirror
 
 
-  * The [Mirror.js overview](/mirror-js-overview/) will teach you how to use the experimental JavaScript support in the Mirror.js preview to create dynamic, interactive prototypes.
+  * The [Mirror.js overview]({{site.baseurl}}/mirror-js-overview/) will teach you how to use the experimental JavaScript support in the Mirror.js preview to create dynamic, interactive prototypes.
 
 
 

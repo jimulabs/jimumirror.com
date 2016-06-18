@@ -9,7 +9,7 @@ title: 'Mirror.js: Live prototyping native Android, in JavaScript'
 id: 532
 ---
 
-## Note: We have stopped the development of Mirror.js and put what we've learned into Mirror Sandbox, a set of new features based on Java code hot-swapping. See [this post](/2015/01/building-android-animations-mirror-sandbox-piecewise/) for details.
+## Note: We have stopped the development of Mirror.js and put what we've learned into Mirror Sandbox, a set of new features based on Java code hot-swapping. See [this post]({{site.baseurl}}/2015/01/building-android-animations-mirror-sandbox-piecewise/) for details.
 
 
 
@@ -19,7 +19,7 @@ id: 532
 
 
 
-[Feature overview and howtos](/mirror-js-overview/)
+[Feature overview and howtos]({{site.baseurl}}/mirror-js-overview/)
 
 
 
@@ -28,16 +28,13 @@ id: 532
 
 
 
-![mirrorjs](/wp-content/uploads/2014/08/mirrorjs.gif)
+![mirrorjs]({{site.baseurl}}/wp-content/uploads/2014/08/mirrorjs.gif)
 
 Mirror.js: Live prototyping native Android, in JavaScript
 
 
 
 
-
-<div class="social-sharing ">
-	        <a onclick="return ss_plugin_loadpopup_js(this);" rel="external nofollow" class="button-googleplus" href="https://plus.google.com/share?url=http%3A%2F%2Fjimulabs.com%2Fmirrorjs-preview%2F" target="_blank">Share on Google+</a><a onclick="return ss_plugin_loadpopup_js(this);" rel="external nofollow" class="button-facebook" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fjimulabs.com%2Fmirrorjs-preview%2F" target="_blank">Share on Facebook</a><a onclick="return ss_plugin_loadpopup_js(this);" rel="external nofollow" class="button-twitter" href="http://twitter.com/intent/tweet/?text=Mirror.js%3A+Live+prototyping+Android%2C+in+JavaScript&amp;url=http%3A%2F%2Fjimulabs.com%2Fmirrorjs-preview%2F&amp;via=jimulabs" target="_blank">Share on Twitter</a>	    </div>	    
 
 
 
@@ -62,7 +59,7 @@ _Mirror.js preview_ is a set of experimental features that we are considering to
 
 
 
-The Android Studio plugin available on this page is a superset of [jimu Mirror](/mirror-downloads). You can try "Mirror.js" for free just as Mirror itself. If you need more time, please [submit a request](https://docs.google.com/forms/d/1z9nfpyWHdS5AnPEm14nyQeI1jcbOzdIx_DyWkjb4rjI/viewform). We'd really appreciate your feedback that will shape the future of Mirror (and the future of Android development). You can either visit our [Google+ community](http://bit.ly/mirror_gplus), or email to [support AT jimulabs.staging.wpengine.com].
+The Android Studio plugin available on this page is a superset of [jimu Mirror]({{site.baseurl}}/mirror-downloads). You can try "Mirror.js" for free just as Mirror itself. If you need more time, please [submit a request](https://docs.google.com/forms/d/1z9nfpyWHdS5AnPEm14nyQeI1jcbOzdIx_DyWkjb4rjI/viewform). We'd really appreciate your feedback that will shape the future of Mirror (and the future of Android development). You can either visit our [Google+ community](http://bit.ly/mirror_gplus), or email to [support AT jimulabs.staging.wpengine.com].
 
 
 

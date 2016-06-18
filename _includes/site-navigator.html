@@ -1,0 +1,21 @@
+    <div id="breadcrumbs"><a href="{{site.baseurl}}/">Home</a>
+     {% assign urlParts = page.url | split: "/" %}
+     {% assign currentUrl = site.baseurl %}
+     {% assign baseUrl = site.baseurl || remove: "/" %}
+     {% for i in urlParts %}
+     	{% if i == "" or i == "posts" or i == baseUrl or i == "author" %}
+     	  {% continue %}
+     	{% elsif i == urlParts.last %}
+     	  {% break %}
+     	{% elsif i == "mirror-docs" %}
+     	     	{% assign currentUrl = "/mirror-docs/" %}
+     		    <span class="sep"> / </span>
+     		    <a href="{{site.baseurl}}/{{currentUrl}}"> Documents </a>
+     	{% else %}
+     	<span class="sep"> / </span>
+     	{% assign newUrl =  currentUrl || append: "/" || append:i %}
+     	<a href="{{newUrl}}">{{i}}</a>
+     	{% assign currentUrl =  newUrl %}
+     	{% endif %}
+     {% endfor %}
+<span class="sep"> / </span> {{ page.title }} </div> <!-- #breadcrumbs -->
