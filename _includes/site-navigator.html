@@ -7,14 +7,14 @@
      	  {% continue %}
      	{% elsif i == urlParts.last %}
      	  {% break %}
-     	{% elsif i == "mirror-docs" %}
-     	     	{% assign currentUrl = "/mirror-docs/" %}
-     		    <span class="sep"> / </span>
-     		    <a href="{{site.baseurl}}/{{currentUrl}}"> Documents </a>
      	{% else %}
      	<span class="sep"> / </span>
      	{% assign newUrl =  currentUrl || append: "/" || append:i %}
+     	{% if i == "mirror-docs" %}
+     	<a href="{{newUrl}}">Documents</a>
+     	{% else %}
      	<a href="{{newUrl}}">{{i}}</a>
+     	{% endif %}
      	{% assign currentUrl =  newUrl %}
      	{% endif %}
      {% endfor %}
