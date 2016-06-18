@@ -9,7 +9,7 @@
 title: Preview Android layouts on real devices as you code - Mirror
 description: > # this means to ignore newlines until "baseurl:"
   jimu Mirror provides live, on-device previews of Android layouts. It also allows you to create realistic prototypes of Android native UI without Java code.
-baseurl: "/jimulabs.com" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://jimulabs.com" # the base hostname & protocol for your site
 twitter_username: https://twitter.com/jimulabs
 facebook_account: https://www.facebook.com/getjimu
