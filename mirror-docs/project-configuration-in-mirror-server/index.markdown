@@ -4,7 +4,7 @@ comments: true
 date: 2013-12-10 08:50:53+00:00
 layout: page
 redirect_from: 
-- /project-configuration-in-mirror-server
+  - /project-configuration-in-mirror-server
 slug: project-configuration-in-mirror-server
 title: Project Setup for Mirror Standalone
 id: 392

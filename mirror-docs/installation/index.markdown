@@ -5,8 +5,7 @@ date: 2013-11-01 15:55:44+00:00
 layout: page
 slug: installation
 redirect_from:
-- /mirror-android-studio-plugin-installation-guide
-- /installation
+ - /installation
 title: 'Mirror Standalone: Installation & System Resquirements'
 id: 337
 ---

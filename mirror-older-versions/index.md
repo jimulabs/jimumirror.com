@@ -4,7 +4,7 @@ comments: false
 date: 2016-03-14 16:27:30+00:00
 layout: page
 redirect_from: 
- - /mirror-downloads/mirror-older-versions
+  - /mirror-downloads/mirror-older-versions
 slug: mirror-older-versions
 title: 'Mirror: Older versions'
 id: 812

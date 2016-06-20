@@ -24,5 +24,5 @@ fullscreen: true
 
 <p><em>We are located in Victoria, British Columbia of Canada, a place they call “a piece of paradise”. Drop us a line if you come to visit this beautiful city!</em></p>
 
-<p><a href="#" class="button medium blue eModal-9">Contact us</a></p>
+{% include contact-us-button.html %}
 </div>
