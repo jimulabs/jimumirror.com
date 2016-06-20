@@ -5,6 +5,7 @@ date: 2014-08-25 11:18:27+00:00
 layout: page
 redirect_from:
 - /mirror-tutorial
+- /mirror-tutorial/
 slug: mirror-tutorial
 title: Getting Started with Mirror
 id: 543

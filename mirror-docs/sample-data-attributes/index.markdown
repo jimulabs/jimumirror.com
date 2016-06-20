@@ -6,6 +6,7 @@ layout: page
 slug: sample-data-attributes
 redirect_from:
  - /sample-data-attributes
+ - /sample-data-attributes/
 title: Supporting custom attributes in sample data
 id: 389
 ---

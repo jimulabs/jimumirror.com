@@ -5,6 +5,7 @@ date: 2014-08-20 08:36:18+00:00
 layout: page
 redirect_from: 
 - /mirror-js-overview/
+- /mirror-js-overview
 slug: mirror-js-overview
 title: Mirror.js Overview
 id: 534

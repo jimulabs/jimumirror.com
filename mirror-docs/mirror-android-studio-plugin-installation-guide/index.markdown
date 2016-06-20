@@ -5,6 +5,7 @@ date: 2014-09-06 00:35:55+00:00
 layout: page
 redirect_from: 
    - /mirror-android-studio-plugin-installation-guide
+   - /mirror-android-studio-plugin-installation-guide/
 slug: mirror-android-studio-plugin-installation-guide
 title: Mirror Android Studio plugin installation guide
 id: 664

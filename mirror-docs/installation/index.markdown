@@ -6,6 +6,7 @@ layout: page
 slug: installation
 redirect_from:
  - /installation
+ - /installation/
 title: 'Mirror Standalone: Installation & System Resquirements'
 id: 337
 ---

@@ -5,6 +5,7 @@ date: 2013-08-24 05:04:57+00:00
 layout: page
 redirect_from: 
  - /mirror-1-x-change-log
+ - /mirror-1-x-change-log/
 slug: mirror-1-x-change-log
 title: Mirror 1.x Change Log
 id: 258

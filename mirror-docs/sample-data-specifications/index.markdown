@@ -6,6 +6,7 @@ layout: page
 slug: sample-data-specifications
 redirect_from: 
  - /sample-data-specifications
+ - /sample-data-specifications/
 title: Sample data specification
 id: 250
 ---
