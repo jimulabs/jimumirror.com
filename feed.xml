@@ -1,30 +1,639 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Preview Android layouts on real devices as you code - Mirror</title>
+    <description>jimu Mirror provides live, on-device previews of Android layouts. It also allows you to create realistic prototypes of Android native UI without Java code.
+</description>
+    <link>http://jimulabs.com/</link>
+    <atom:link href="http://jimulabs.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 22 Jun 2016 12:01:08 -0700</pubDate>
+    <lastBuildDate>Wed, 22 Jun 2016 12:01:08 -0700</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>Will &quot;Instant Run&quot; instantly kill Mirror?</title>
+        <description>&lt;p&gt;&lt;em&gt;This post was meant to be an internal note, but we decided to think aloud and open it up for broader discussion in the community. Your feedback would be highly appreciated.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-1.34.06-PM.png&quot;&gt;&lt;img src=&quot;/wp-content/uploads/2015/11/Screen-Shot-2015-11-24-at-1.34.06-PM.png&quot; alt=&quot;Instant run tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To be honest, we’ve been living in the fear of this for a couple of years, since the onset of jimu Mirror. I’m actually surprised that the day hasn’t come sooner (we demoed Mirror to two different groups from the Android tools team back since early 2014).&lt;/p&gt;
+
+&lt;p&gt;Apart from facing the anxiety and uncertainty, we are proud of being the first (to our knowledge) to bring some elements of live-coding to Android. We are thrilled to see that Mirror has helped many of you save time and build better apps, and we are grateful for your generous support.&lt;/p&gt;
+
+&lt;p&gt;So what are we going to do with Mirror? One thing is for sure, Android Studio 2.0 looks like a step in the right direction and Instant Run would be a bliss to fellow developers, but it doesn’t mean that Android dev tools are perfect. There are even opportunities to build upon Instant Run to do something useful if it proves to be a superior solution (they have some interesting design decisions, for example, the main classes are not reloaded during  a refresh). We’ll continue to innovate in the tools space the way we’ve always been. We’ll keep fixing bugs and adding features (maybe slowly but steadily).&lt;/p&gt;
+
+&lt;p&gt;The key difference between Mirror and other similar tools is that it’s mainly a tool for building UI, rather than previewing the entire app. That’s why we have &lt;a href=&quot;/mirror-docs/mirror-tutorial/&quot;&gt;sample data&lt;/a&gt; and &lt;a href=&quot;https://github.com/jimulabs/mirror-sandbox&quot;&gt;Mirror Sandbox&lt;/a&gt;. With Mirror, you can create full-fidelity prototypes before coding adapters or fragments. We think this prototype-first approach leads to more effective collaboration across the team.&lt;/p&gt;
+
+&lt;p&gt;What do you think? Have you used Mirror to build prototypes? What other things do you think we could make Mirror useful? I’d really appreciate your feedback.&lt;/p&gt;
+
+&lt;p&gt;Will Instant Run kill Mirror? I guess only if we let it be killed.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 24 Nov 2015 13:54:10 -0800</pubDate>
+        <link>http://jimulabs.com/2015/11/will-instant-run-instantly-kill-mirror/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2015/11/will-instant-run-instantly-kill-mirror/</guid>
+        
+        
+        <category>Features</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Setting up Mirror for Stetho</title>
+        <description>&lt;p&gt;Facebook’s &lt;a href=&quot;http://facebook.github.io/stetho/&quot;&gt;Stetho&lt;/a&gt; makes it possible to inspect native Android apps in Chrome Developer Tools. Its latest release added view inspection support, which is really handy when combined with Mirror. You can quickly preview layout changes on the device, and at the same time browse view hierarchy using Stetho – without rebuilding or re-deploying the app.&lt;/p&gt;
+
+&lt;p&gt;To enable Stetho in Mirror previews, you’ll need to use the &lt;a href=&quot;https://github.com/jimulabs/mirror-sandbox&quot;&gt;mirror-sandbox&lt;/a&gt; library, and add a static method into your sandbox class:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class MySandbox extends MirrorSandboxBase {
+    @SuppressWarnings(&quot;unused&quot;)
+    // This method doesn&#39;t have to public
+    public static void $init(Context context) {
+        Stetho.initialize(
+                Stetho.newInitializerBuilder(context)
+                        .enableDumpapp(Stetho.defaultDumperPluginsProvider(context))
+                        .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
+                        .build());
+    }
+    ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Watch it in action below:&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/Rzq8FjxIpJw?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;What do you think? Let me know in the comment box!&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 09 Apr 2015 15:24:05 -0700</pubDate>
+        <link>http://jimulabs.com/2015/04/setting-up-mirror-for-stetho/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2015/04/setting-up-mirror-for-stetho/</guid>
+        
+        
+        <category>Features</category>
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Mirror&#39;s top 4 features</title>
+        <description>&lt;p&gt;We use Mirror to build Mirror itself and other apps. It has permanently changed our workflow for building Android UI. As one of our users told us, we “can’t imagine making a UI without it”.&lt;/p&gt;
+
+&lt;p&gt;To help you improve your workflow too, I created this 2-minute video to cover Mirror’s 4 top features. Hope you like it!&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/bbI61uj8_LE?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 01 Apr 2015 18:50:26 -0700</pubDate>
+        <link>http://jimulabs.com/2015/04/mirrors-top-4-features/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2015/04/mirrors-top-4-features/</guid>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+      <item>
+        <title>Mirror and Kotlin</title>
+        <description>&lt;p&gt;If you haven’t tried &lt;a href=&quot;http://kotlinlang.org&quot;&gt;Kotlin&lt;/a&gt;, you should really check it out, now! Kotlin gives us lambdas, null safety, better generics and many other features that help us write safe and concise code. Its seamless interoperability with Java, first-class IDE support and small footprint make it a great choice for writing Android apps – It’s simply better than Java (even Java 8). For more details, check out &lt;a href=&quot;https://docs.google.com/document/d/1ReS3ep-hjxWA8kZi0YqDbEhCqTt29hG8P44aA9W0DM8/edit?hl=en&amp;amp;forcehl=1&quot;&gt;this comprehensive report&lt;/a&gt; written by Jake Wharton.&lt;/p&gt;
+
+&lt;p&gt;How is Mirror related to Kotlin? If you’ve heard of &lt;a href=&quot;/2015/01/building-android-animations-mirror-sandbox-piecewise/&quot;&gt;Mirror Sandbox&lt;/a&gt;, you’ll guess it right. Yes! Mirror will soon be able to hot-swap Kotlin code (together with Java code and Android resources).&lt;/p&gt;
+
+&lt;p&gt;Watch the quick demo below :&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/3tlIMPy9kZ8?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 22 Feb 2015 19:12:24 -0800</pubDate>
+        <link>http://jimulabs.com/2015/02/mirror-kotlin/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2015/02/mirror-kotlin/</guid>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+      <item>
+        <title>Mirror Sandbox and Replica Island</title>
+        <description>&lt;p&gt;We had some fun playing with Mirror Sandbox and the open-source game &lt;a href=&quot;http://replicaisland.net/&quot;&gt;Replica Island&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Just watch the screencast below and you’ll see.  The source code of the game (with Mirror files and a few lines of modification) is available on &lt;a href=&quot;https://github.com/jimulabs/replica-island-gradle&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you are not familiar with Mirror Sandbox, check out &lt;a href=&quot;/2015/01/building-android-animations-mirror-sandbox-piecewise/&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/aeb0Mzj8oF4?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;For more details about Mirror Sandbox, check out &lt;a href=&quot;/2015/01/building-android-animations-mirror-sandbox-piecewise/&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 17 Jan 2015 17:47:47 -0800</pubDate>
+        <link>http://jimulabs.com/2015/01/mirror-sandbox-replica-island/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2015/01/mirror-sandbox-replica-island/</guid>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+      <item>
+        <title>Building Android animations with Mirror Sandbox, piecewise</title>
+        <description>&lt;p&gt;I am thrilled than ever to share this with you: we believe we’ve made an important step in making Android UI development easier. Yes! Mirror can now &lt;strong&gt;hot-swap Java classes&lt;/strong&gt; of your custom views as you code. According to our initial testing, it usually takes 4-10 seconds to see the changes on the device – slower than resource hot-swapping with Mirror but still a lot faster than building and deploying the full APK!&lt;/p&gt;
+
+&lt;p&gt;Moreover, Mirror will allow you to build and preview animations and interactions &lt;strong&gt;in small pieces&lt;/strong&gt; – think of it as a &lt;a href=&quot;https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop&quot;&gt;REPL&lt;/a&gt; for Android UI development. It’s a great way to build UIs especially for dynamic things such as animations.&lt;/p&gt;
+
+&lt;p&gt;Typical use cases include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Live-coding custom views, animations and interactions. Once satisfied, you can &lt;strong&gt;directly use the animation code in production&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Prototyping your app’s UI by populating views with mock data where Mirror’s sample data XML doesn’t fit: &lt;code class=&quot;highlighter-rouge&quot;&gt;myCustomView.setData(someDataModel)&lt;/code&gt;. Because it’s plain old Java code, you can do whatever that Java allows (with some caution, see FAQ below).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Experimenting and learning UI related Android APIs by executing code piecewise - just as what you can do with REPLs in other languages such as Ruby.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;See the video below for a quick tutorial (It’s 6-min but it’s worth watching till the end, I promise. :))&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/r4r5g4tSwW0?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;Or if you prefer reading text, there are two modes of usage:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Just live-coding custom views.&lt;/strong&gt; In this case, you don’t need to make any changes to your project. Just click the button “Start Mirror” on Android Studio’s toolbar, and Mirror will start monitoring changes to your Java source files in addition to resource XMLs. The updated code will be compiled and sent to the device, which the Mirror client uses to render the layout.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Prototyping the UI with Mirror Sandbox.&lt;/strong&gt; You will need to add a small open-source library dependency, &lt;a href=&quot;https://github.com/jimulabs/mirror-sandbox&quot;&gt;mirror-sandbox&lt;/a&gt;, into your project, and create subclass(es) of &lt;code class=&quot;highlighter-rouge&quot;&gt;MirrorSandboxBase&lt;/code&gt;. The benefit, as mentioned, is that you can preview your animations and interactions &lt;em&gt;piecewise&lt;/em&gt;. We also built a few useful &lt;a href=&quot;https://github.com/jimulabs/motion-kit&quot;&gt;wrapper classes&lt;/a&gt; that make it a bit easier to create and choreograph animations. See the &lt;a href=&quot;https://github.com/jimulabs/mirror-sandbox&quot;&gt;Github repo&lt;/a&gt; for more details.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;faq&quot;&gt;FAQ&lt;/h2&gt;
+
+&lt;h3 id=&quot;how-does-it-work&quot;&gt;How does it work?&lt;/h3&gt;
+
+&lt;p&gt;Mirror achieves the fast code hot-swapping by only compiling the necessary Java files (updated files and their dependents) - it’s incremental compilation in a sense. The resulting classes are then converted into a (small) &lt;code class=&quot;highlighter-rouge&quot;&gt;dex&lt;/code&gt; file, which is sent to connected devices momentarily. The Mirror client loads the classes in this &lt;code class=&quot;highlighter-rouge&quot;&gt;dex&lt;/code&gt; file using a custom class loader.&lt;/p&gt;
+
+&lt;h3 id=&quot;will-it-hot-swap-all-my-java-files&quot;&gt;Will it hot-swap all my Java files?&lt;/h3&gt;
+
+&lt;p&gt;Actually no. Mirror only hot-swaps your custom views and their dependencies. It ignores classes that are not necessary for rendering layouts such as activities, fragments, services etc. Technically, as of now, all subclasses of &lt;code class=&quot;highlighter-rouge&quot;&gt;android.app.*&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;android.support.v4.app.*&lt;/code&gt; are ignored.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-code-can-i-put-in-the-mirrorsandboxentersandbox-method&quot;&gt;What code can I put in the “MirrorSandbox#enterSandbox()” method?&lt;/h3&gt;
+
+&lt;p&gt;Mirror Sandbox is designed to help you build the user interface of your app, so generally you can put code that populates or animates views etc. The Mirror client only uses a small number of permissions such as internet. Expect errors if you write code that requires other permissions. And apparently, you don’t want to put misbehaving code such as an infinite loop there.&lt;/p&gt;
+
+&lt;h3 id=&quot;whats-your-eureka-moment&quot;&gt;What’s your Eureka moment?&lt;/h3&gt;
+
+&lt;p&gt;Remember &lt;a href=&quot;/mirrorjs-preview/&quot;&gt;Mirror.js&lt;/a&gt;? It works pretty well as a prototyping tool and JavaScript scripts can be loaded and executed live as they are being edited. However, when it’s time to code the actual production app, you don’t want to reimplement the animations in Java from scratch, right? (See my talk at Droidcon London 2014, &lt;a href=&quot;http://www.slideshare.net/lintonye/kill-design-specs-droidcon-london-2014&quot;&gt;Kill Design Specs&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;In a rainy morning, I was contemplating how we could easily convert JavaScript scripts into Java code without producing a bunch of mess. Or maybe we could directly &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino/JavaScript_Compiler&quot;&gt;compile it into bytecode&lt;/a&gt;? Or maybe let’s require users to ship apps with &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino&quot;&gt;Rhino&lt;/a&gt;? Aha! If we can hot-swap Java code quickly enough, why do we bother to convert?&lt;/p&gt;
+
+&lt;p&gt;Also we assumed that, because of the wide use of JavaScript in web design, it should be easier for designers compared to Java. But is that really the case? In fact writing Java code CAN be easier thanks to the awesome IDE support: error checking, code complete, quick access to documentation etc. My current hypothesis: people who can write JavaScript code will be able to at least write script-like Java code with proper tool support and good examples, at a higher speed. BTW, I made far fewer errors when making the video above in comparison to the &lt;a href=&quot;/mirrorjs-preview/&quot;&gt;Mirror.js video&lt;/a&gt;. Which one is easier, Java or JavaScript? What do you think?&lt;/p&gt;
+
+&lt;p&gt;So here you go, we give you Mirror Sandbox!&lt;/p&gt;
+
+&lt;h3 id=&quot;still-have-questions-make-a-comment-below&quot;&gt;Still have questions? Make a comment below.&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  
+&amp;gt; 
+&amp;gt; Written with [StackEdit](https://stackedit.io/). &amp;lt;== I don&#39;t mind leaving this here as it&#39;s an awesome editor!
+&amp;gt; 
+&amp;gt; 
+&lt;/blockquote&gt;
+
+</description>
+        <pubDate>Tue, 06 Jan 2015 21:46:06 -0800</pubDate>
+        <link>http://jimulabs.com/2015/01/building-android-animations-mirror-sandbox-piecewise/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2015/01/building-android-animations-mirror-sandbox-piecewise/</guid>
+        
+        
+        <category>Features</category>
+        
+        <category>News</category>
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Sneak peek: Hot-swapping Java code with Mirror Sandbox</title>
+        <description>&lt;p&gt;&lt;strong&gt;Happy New Year Everyone!&lt;/strong&gt; Just wanted to give you a sneak peek of what we’ve been working on lately. It’s still in a state of flux but I think it looks quite promising!&lt;/p&gt;
+
+&lt;p&gt;Yes, with Mirror Sandbox we can &lt;strong&gt;hot-swap Java code&lt;/strong&gt; and use Java code to populate views with mock data. This opens up a whole new class of opportunities of what you can do with Mirror (I’ll update you with details a bit later).&lt;/p&gt;
+
+&lt;p&gt;According to my unscientific tests with a sample project (and the &lt;a href=&quot;https://github.com/google/iosched&quot;&gt;iosched2014 app&lt;/a&gt;), it takes 4-10 seconds to see changes on the device – slower than normal resource updates with Mirror but faster than building and deploying the whole APK!&lt;/p&gt;
+
+&lt;p&gt;Watch the video below and let us know what you think. (The text entry portion of the video was sped up but the waiting and animations were not. You can compare the blinking speed of the cursor.)&lt;/p&gt;
+&lt;p&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/DMev1tU8pus?rel=0&amp;#038;controls=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;p&gt;Mirror Sandbox will be in private beta soon. If you want to give it a try before the public release, be sure to request an invitation below.&lt;/p&gt;
+
+&lt;p&gt;Note: the chart animation is a partial implementation of &lt;a href=&quot;https://dribbble.com/shots/1842762-Survey-Platform-Graph-Design&quot;&gt;Ramotion’s design&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 29 Dec 2014 09:47:14 -0800</pubDate>
+        <link>http://jimulabs.com/2014/12/sneak-peek-hot-swapping-java-code-mirror-sandbox/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2014/12/sneak-peek-hot-swapping-java-code-mirror-sandbox/</guid>
+        
+        
+        <category>Features</category>
+        
+      </item>
+    
+      <item>
+        <title>My Journey to Lollipop Transitions: part 1</title>
+        <description>&lt;p&gt;&lt;em&gt;What you’ll see below isn’t a tutorial, but a journey of what I’ve tried and experienced. If you can learn one thing or two after watching me stumbling through the process, I’d find this writing well worth the time. All the code discussed below is available on &lt;a href=&quot;https://github.com/jimulabs/google-music-mock&quot;&gt;Github&lt;/a&gt;, with each round being on its own branch.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve heard good things about the new APIs in Lollipop such as reveal and window transitions – looks like you can do lots of cool stuff with just a couple of lines, awesome! I couldn’t resist giving it a spin.&lt;/p&gt;
+
+&lt;p&gt;Rather than simple examples, my goal was to implement some real-world-ish effects similar to the example found in &lt;a href=&quot;http://www.google.com/design/spec/animation/meaningful-transitions.html#meaningful-transitions-visual-continuity&quot;&gt;Google’s Material design guideline&lt;/a&gt;, adapted to a phone form factor:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/wp-content/uploads/2014/12/final-result.gif&quot; alt=&quot;final-result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since I already had the layouts and dummy data, I expected it to take no more than a couple of hours. But guess what? It took me more than two days and quite a few rounds of trial-and-errors. There are quite a few glitches and gotchas that you’ll probably run into too.&lt;/p&gt;
+
+&lt;p&gt;I’ll start with my first round, and follow up with other rounds in future posts (as it’s getting long).&lt;/p&gt;
+
+&lt;h2 id=&quot;round-1-window-content-transitions&quot;&gt;Round 1: window content transitions&lt;/h2&gt;
+
+&lt;p&gt;It’s straightforward to dissect the animations into a few parts:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;the shared view transition between the &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumListActivity&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumDetailActivity&lt;/code&gt;,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the reveal effect on &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumDetailActivity&lt;/code&gt;,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the scaling effect of the FAB on &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumDetailActivity&lt;/code&gt;,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;the “folding/unfolding” effect of the two panels below the album art image on &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumDetailActivity&lt;/code&gt;,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;and the fading effect of the &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt;s in the panels (this is probably not very noticeable in the video)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;My first instinct after reading the &lt;a href=&quot;https://developer.android.com/training/material/animations.html#Transitions&quot;&gt;doc&lt;/a&gt; is to take full advantage of the brand new activity/window content transition APIs. You know, use the shared view transition for 1; and for 2-5, set a choreographed &lt;code class=&quot;highlighter-rouge&quot;&gt;TransitionSet&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;windowEnterTransition&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;windowExitTransition&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sounds easy, right? Wait a sec, what’s &lt;code class=&quot;highlighter-rouge&quot;&gt;windowReturnTransition&lt;/code&gt;? And &lt;code class=&quot;highlighter-rouge&quot;&gt;windowReenterTransition&lt;/code&gt;? Huh? What about &lt;code class=&quot;highlighter-rouge&quot;&gt;windowSharedElementEnter/Exit/Return/ReenterTransition&lt;/code&gt;? Thankfully, Alex Lockwood wrote an excellent &lt;a href=&quot;http://www.androiddesignpatterns.com/2014/12/activity-fragment-transitions-in-android-lollipop-part1.html&quot;&gt;post&lt;/a&gt; about them – good time for a revisit!&lt;/p&gt;
+
+&lt;p&gt;Yup it’s a bit daunting to have 2x4 different types of transitions. But I’d only need to worry about &lt;code class=&quot;highlighter-rouge&quot;&gt;sharedElementEnterTransition&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;windowEnterTransition&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;windowReturnTransition&lt;/code&gt; for now. The system will create sensible defaults for the other five. (BTW: when I got started, I actually mistakenly used &lt;code class=&quot;highlighter-rouge&quot;&gt;windowExitTransition&lt;/code&gt; when I was supposed to use &lt;code class=&quot;highlighter-rouge&quot;&gt;windowReturnTransition&lt;/code&gt;. So be careful!)&lt;/p&gt;
+
+&lt;h3 id=&quot;shared-element-transition&quot;&gt;Shared element transition&lt;/h3&gt;
+
+&lt;p&gt;It turned out that the shared element transition was the easiest step in this whole (tiny) project. &lt;code class=&quot;highlighter-rouge&quot;&gt;ActivityOptions.makeSceneTransitionAnimation()&lt;/code&gt; and boom, it just worked.&lt;/p&gt;
+
+&lt;p&gt;It’s not without issues, though. For one thing, sometimes the entire transition is skipped and it just plays the default bottom-to-top animation on my Nexus 5 – looks like a bug to me. (&lt;strong&gt;Update Jan 3, 2015:&lt;/strong&gt; I saw this issue on Android 5.0.0, but it’s no longer reproducible as of 5.0.1, see &lt;a href=&quot;http://www.reddit.com/r/androiddev/comments/2p0x2g/my_journey_to_lollipop_transitions_part_1/cn4iw1n&quot;&gt;here&lt;/a&gt; for details)&lt;/p&gt;
+
+&lt;p&gt;Also, while the shared view is moving, it covers everything on its path, including the views that are supposed to be above. As shown in the (slowed-down) video below, the top of the cyan FAB button is covered up (and hence the flickering), and even the system navigation bar!&lt;/p&gt;
+&lt;div class=&quot;fivecol&quot; style=&quot;float:none; margin-bottom:20px;&quot;&gt;
+&lt;iframe width=&quot;282&quot; height=&quot;500&quot; src=&quot;//www.youtube.com/embed/pClWvtlHprg?controls=0&amp;amp;rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Without looking at the code, my guess is that the animation happens on an overlay of the window, which naturally covers everything on the screen. Probably we should draw the FAB (and system navigation bar) on the overlay as well? (Insert x hours of reading &lt;code class=&quot;highlighter-rouge&quot;&gt;PhoneWindow.java&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;ActivityTransitionCoordinator.java&lt;/code&gt; etc to confirm)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: As reddit user scep12 &lt;a href=&quot;http://www.reddit.com/r/androiddev/comments/2p0x2g/my_journey_to_lollipop_transitions_part_1/&quot;&gt;pointed out&lt;/a&gt;, there’s a way to turn off the overlay: &lt;code class=&quot;highlighter-rouge&quot;&gt;Window#setSharedElementUseOverlay()&lt;/code&gt;. In my experience, the flag on both &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumListActivity&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumDetailActivity&lt;/code&gt; needs to be set to avoid the flickering on the FAB and system navigation bar. The animation is a little different, you can try and see on the &lt;a href=&quot;https://github.com/jimulabs/google-music-mock/tree/round-1-window-content-transitions&quot;&gt;“round-1-window-content-transitions” branch&lt;/a&gt;.
+&lt;strong&gt;Update Jan 3, 2015&lt;/strong&gt;: Alex Lockwood analyzed the pros and cons of using &lt;code class=&quot;highlighter-rouge&quot;&gt;setSharedElementUseOverlay()&lt;/code&gt; and also mentioned another approach to avoid this glitch, see &lt;a href=&quot;http://www.reddit.com/r/androiddev/comments/2p0x2g/my_journey_to_lollipop_transitions_part_1/cn4iak3&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;window-enter-transition&quot;&gt;Window enter transition&lt;/h3&gt;
+
+&lt;p&gt;Now it’s time to cook the enter transition of &lt;code class=&quot;highlighter-rouge&quot;&gt;AlbumDetailActivity&lt;/code&gt;. It’s straightforward to enable the transition in code as below (or in the theme in XML):&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getWindow().setWindowEnterTransition(transition)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The rest is to create and choreograph the transitions.&lt;/p&gt;
+
+&lt;h4 id=&quot;custom-transitions&quot;&gt;Custom transitions&lt;/h4&gt;
+
+&lt;p&gt;Soon I figured I had to write my own &lt;code class=&quot;highlighter-rouge&quot;&gt;Transition&lt;/code&gt; classes for the revealing, scaling and “folding/unfolding” effects. Two of these classes are &lt;em&gt;seemingly&lt;/em&gt; straightforward (see &lt;a href=&quot;https://github.com/jimulabs/google-music-mock/blob/round-1-window-content-transitions/app/src/main/java/com/jimulabs/googlemusicmock/transition/Fold.java&quot;&gt;Fold&lt;/a&gt; and &lt;a href=&quot;https://github.com/jimulabs/google-music-mock/blob/round-1-window-content-transitions/app/src/main/java/com/jimulabs/googlemusicmock/transition/Scale.java&quot;&gt;Scale&lt;/a&gt;), while the reveal transition deserves a separate section.&lt;/p&gt;
+
+&lt;p&gt;In fact, I used “seemingly” above because some extra care should be taken when writing custom transitions which I didn’t realize until finishing this post. So all of my &lt;code class=&quot;highlighter-rouge&quot;&gt;Fold&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Scale&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;RevealTransition&lt;/code&gt; classes need to be revised. I’ll reserve a future post specifically for custom transitions (if I can’t find a good article about it by then).&lt;/p&gt;
+
+&lt;h4 id=&quot;transition-choreography&quot;&gt;Transition choreography&lt;/h4&gt;
+
+&lt;p&gt;The next step is to choreograph the rest of the transitions. I used &lt;code class=&quot;highlighter-rouge&quot;&gt;TransitionSet&lt;/code&gt; with two different orderings: &lt;code class=&quot;highlighter-rouge&quot;&gt;TransitionSet.ORDERING_SEQUENTIAL&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ORDERING_TOGETHER&lt;/code&gt;, and also &lt;code class=&quot;highlighter-rouge&quot;&gt;Transition#setStartDelay()&lt;/code&gt;. Further, I need to set the target of the transitions to limit them to only the views I wanted to animate.&lt;/p&gt;
+
+&lt;p&gt;Something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  fadeFab.setStartDelay(500);
+ 	 ...
+  Fold foldTitleContainer = new Fold();
+ 	 foldTitleContainer.addTarget(R.id.title_container);
+  ...
+ 	 TransitionSet panelsSet = new TransitionSet();
+  panelsSet.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
+  panelsSet.addTransition(titleContainerSet);
+ 	 panelsSet.addTransition(infoContainerSet);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Later I decided to switch to XML as the declarative format was supposed to be easier to manage (see &lt;a href=&quot;https://github.com/jimulabs/google-music-mock/blob/round-1-window-content-transitions/app/src/main/res/transition/album_detail_enter.xml&quot;&gt;album_detail_enter.xml&lt;/a&gt; and &lt;a href=&quot;https://github.com/jimulabs/google-music-mock/blob/round-1-window-content-transitions/app/src/main/res/transition/album_detail_return.xml&quot;&gt;album_detail_return.xml&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Here’s a snippet:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;transitionSet xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+	    android:transitionOrdering=&quot;together&quot;&amp;gt;
+	    &amp;lt;transitionSet android:transitionOrdering=&quot;sequential&quot;&amp;gt;
+	        &amp;lt;transitionSet android:transitionOrdering=&quot;together&quot;&amp;gt;
+	            &amp;lt;transition class=&quot;com.jimulabs.googlemusicmock.transition.Fold&quot;&amp;gt;
+	                &amp;lt;targets&amp;gt;
+	                    &amp;lt;target android:targetId=&quot;@id/title_container&quot; /&amp;gt;
+	                &amp;lt;/targets&amp;gt;
+	            &amp;lt;/transition&amp;gt;
+	            &amp;lt;fade&amp;gt;
+	                &amp;lt;targets&amp;gt;
+	                    &amp;lt;target android:targetId=&quot;@id/title&quot; /&amp;gt;
+	                    &amp;lt;target android:targetId=&quot;@id/subtitle&quot; /&amp;gt;
+	                &amp;lt;/targets&amp;gt;
+	            &amp;lt;/fade&amp;gt;
+	        &amp;lt;/transitionSet&amp;gt;
+	  ...
+	&amp;lt;/transitionSet&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Is it really easy to read and change, though? I don’t know about you, but for me, I see a full page of &lt;code class=&quot;highlighter-rouge&quot;&gt;target&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;transition&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;android&lt;/code&gt; etc. The information about how the transitions are choreographed is buried in the noisy XML. Remember, if you are designing these transitions, you don’t know how they will look until you can actually see them in action. Imagine spending some quality time to make sense of this XML, tweak the timing and playing orders, run the app to check the animation and repeat… good luck. There’s gotta be a better way! (hint, hint)&lt;/p&gt;
+
+&lt;p&gt;Anyways, we can inflate this transition and set it to the window:&lt;/p&gt;
+
+&lt;p&gt;TransitionInflater inflater = TransitionInflater.from(this);
+  Transition transition = inflater.inflate(R.transition.album_detail_enter);&lt;/p&gt;
+
+&lt;p&gt;And here’s what it looks like (without the reveal effect). There’s some weird flickering at the beginning of the enter transition and I’ll cover it in round 3 (yeah, I couldn’t manage to solve it until round 3).&lt;/p&gt;
+&lt;div class=&quot;fivecol&quot; style=&quot;float:none; margin-bottom:20px;&quot;&gt;
+&lt;iframe width=&quot;282&quot; height=&quot;500&quot; src=&quot;//www.youtube.com/embed/6ywyDhEcxJA?controls=0&amp;amp;rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;reveal-transition&quot;&gt;Reveal transition&lt;/h3&gt;
+
+&lt;p&gt;Let’s come back to the reveal transition. Normally you would use &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewAnimationUtils.createCircularReveal()&lt;/code&gt; to get a &lt;code class=&quot;highlighter-rouge&quot;&gt;RevealAnimator&lt;/code&gt;, which, interestingly, is a public but hidden class (probably Google isn’t super happy about the implementation yet?).  Since it’s just an &lt;code class=&quot;highlighter-rouge&quot;&gt;Animator&lt;/code&gt;, I can just use it in my &lt;code class=&quot;highlighter-rouge&quot;&gt;RevealTransition&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  @Override
+  public Animator onAppear(ViewGroup sceneRoot, View view, TransitionValues startValues, TransitionValues endValues) {
+      Animator animator = ViewAnimationUtils.createCircularReveal(view, mEpicenter.x, mEpicenter.y, mSmallRadius, mBigRadius);
+      return animator;
+  }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But if you run it – oops, the app will crash with an &lt;code class=&quot;highlighter-rouge&quot;&gt;UnsupportedOperationException&lt;/code&gt;. Basically the &lt;code class=&quot;highlighter-rouge&quot;&gt;RevealAnimation&lt;/code&gt; cannot be paused or resumed (possibly because it runs in the render thread) but the window transition code pause/resume the animations at some point. My hack was to use a &lt;code class=&quot;highlighter-rouge&quot;&gt;WrapperAnimator&lt;/code&gt; that intercepts and ignores calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;pause()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;resume()&lt;/code&gt; and delegates other calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;RevealAnimator&lt;/code&gt;.  Note this is just my quick-and-dirty solution to get the demo going, for a proper implementation, see this Googler halfthought’s &lt;a href=&quot;https://halfthought.wordpress.com/2014/11/07/reveal-transition/&quot;&gt;Reveal Transition post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here’s what I’ve got so far (slowed down by 2x):&lt;/p&gt;
+&lt;div class=&quot;fivecol&quot; style=&quot;float:none; margin-bottom:20px;&quot;&gt;
+&lt;iframe width=&quot;282&quot; height=&quot;500&quot; src=&quot;//www.youtube.com/embed/GxhqaGAP3DI?controls=0&amp;amp;rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Obviously, it isn’t quite what I wanted. The reveal effect is hardly noticeable because the yellowish background always fades away. I wanted it to stay to give the reveal animation a clearer cut. I’m not sure if it’s possible to turn off this fading, but let’s continue with my approach because it reveals an interesting limitation of Lollipop’s window transition.&lt;/p&gt;
+
+&lt;p&gt;So my approach was to set the yellow background to the &lt;code class=&quot;highlighter-rouge&quot;&gt;RelativeLayout&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;layout/activity_album_detail&lt;/code&gt; instead. See the video below (and the code on the &lt;a href=&quot;https://github.com/jimulabs/google-music-mock/tree/round-1-window-content-transitions&quot;&gt;“round-1” branch&lt;/a&gt;):&lt;/p&gt;
+&lt;div class=&quot;fivecol&quot; style=&quot;float:none; margin-bottom:20px;&quot;&gt;
+&lt;iframe width=&quot;282&quot; height=&quot;500&quot; src=&quot;//www.youtube.com/embed/3NtcueSJCJo?controls=0&amp;amp;rel=0&amp;amp;showinfo=0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The reveal animation worked as expected. However, all the other animations are now gone! How come? It took me a few hours to realize this tricky behaviour of the window transition: &lt;strong&gt;Will a window transition run for a particular view? Well, it depends on the background of the view’s ancestors.&lt;/strong&gt; To put it precisely:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;If the background of a &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt; is set (even if it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;android:color/transparent&lt;/code&gt;), the transition system will treat the &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt; as a single view and ignore its children. Thus, any transitions will only run on the &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt;, instead of its children individually; if a transition has its target set to one of the children only, the transition will not run at all.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Conversely, if a &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt; does not have a background (or it’s &lt;code class=&quot;highlighter-rouge&quot;&gt;@null&lt;/code&gt;), transitions will run for all its individual children; if a transition has its target set to the &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup&lt;/code&gt;, the transition will not run at all.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;This does NOT happen if you run &lt;code class=&quot;highlighter-rouge&quot;&gt;beginDelayedTransition()&lt;/code&gt; in normal cases such as setting the visibility of views in a &lt;code class=&quot;highlighter-rouge&quot;&gt;OnClickListener&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This limitation led me to try round 2, just run the rest of transitions using &lt;code class=&quot;highlighter-rouge&quot;&gt;beginDelayedTransition()&lt;/code&gt; after the &lt;code class=&quot;highlighter-rouge&quot;&gt;windowEnterTransition&lt;/code&gt; finishes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 12/15/2014:&lt;/strong&gt; There is some more information about this behaviour in &lt;a href=&quot;https://developer.android.com/reference/android/view/ViewGroup.html#isTransitionGroup()&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup#isTransitionGroup()&lt;/code&gt;&lt;/a&gt;. So this is by design, not a bug. And &lt;a href=&quot;https://developer.android.com/reference/android/view/ViewGroup.html#setTransitionGroup(boolean)&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup#setTransitionGroup(boolean)&lt;/code&gt;&lt;/a&gt; can be used to customize this behaviour. But still, why are Activity transitions different from normal transitions?&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;By now my impression about the window transition stuff in Lollipop is mixed: it does good things, but be warned, there are glitches, bugs and confusions. Handle it with care. (or hopefully Google will fix these issues soon?)&lt;/p&gt;
+
+&lt;p&gt;Below is a rundown of the issues I’ve come across so far:&lt;/p&gt;
+
+&lt;h3 id=&quot;bugs&quot;&gt;Bugs&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Shared view transition glitches: when the animation is playing, it covers up everything, including the views that are supposed to be above, even the system navigation bar (!)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: As reddit user scep12 &lt;a href=&quot;http://www.reddit.com/r/androiddev/comments/2p0x2g/my_journey_to_lollipop_transitions_part_1/&quot;&gt;pointed out&lt;/a&gt;, you can use &lt;code class=&quot;highlighter-rouge&quot;&gt;Window#setSharedElementUseOverlay()&lt;/code&gt; to turn off the overlay. The resulting animation is a little different but better than the flickering.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Update Jan 3, 2015&lt;/strong&gt;: Alex Lockwood analyzed the pros and cons of using &lt;code class=&quot;highlighter-rouge&quot;&gt;setSharedElementUseOverlay()&lt;/code&gt; and also mentioned another approach to avoid this glitch, see &lt;a href=&quot;http://www.reddit.com/r/androiddev/comments/2p0x2g/my_journey_to_lollipop_transitions_part_1/cn4iak3&quot;&gt;this post&lt;/a&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sometimes transitions don’t play at all (&lt;strong&gt;Update Jan 3, 2015:&lt;/strong&gt; I saw this issue on Android 5.0.0, but it’s no longer reproducible as of 5.0.1, see &lt;a href=&quot;http://www.reddit.com/r/androiddev/comments/2p0x2g/my_journey_to_lollipop_transitions_part_1/cn4iw1n&quot;&gt;here&lt;/a&gt; for details)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;confusions&quot;&gt;Confusions&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Whether a window transition will run or not for a particular view depends on the background of the view’s ancestors. I’m not sure if this is by design or a bug. &lt;strong&gt;Update 12/15/2014:&lt;/strong&gt; In fact &lt;a href=&quot;https://developer.android.com/reference/android/view/ViewGroup.html#setTransitionGroup(boolean)&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ViewGroup#setTransitionGroup(boolean)&lt;/code&gt;&lt;/a&gt; can be used to customize this behaviour. But still, why are Activity transitions different from normal transitions?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;windowContentTransition&lt;/code&gt; doesn’t seem to have any effect. No matter if it’s set to &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;, transition animations work fine as long as the theme is &lt;code class=&quot;highlighter-rouge&quot;&gt;android:Theme.Material&lt;/code&gt; or its variants.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2x4 types of transitions: [&lt;code class=&quot;highlighter-rouge&quot;&gt;sharedElement&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;window&lt;/code&gt;] x [&lt;code class=&quot;highlighter-rouge&quot;&gt;enterTransition&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;exitTransition&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;returnTransition&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;reenterTransition&lt;/code&gt;]. In many cases you’d only need to worry about a few of them, but are there any ways to simplify this conceptually?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Transition choreography via Java code or XML is not easy, specially when you are in the design phase of the animations.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ll write about my next rounds of using view transitions and animators in the next post.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading! In the meantime, I’d appreciate your feedback and comments.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 11 Dec 2014 14:12:44 -0800</pubDate>
+        <link>http://jimulabs.com/2014/12/journey-lollipop-transitions-part-1/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2014/12/journey-lollipop-transitions-part-1/</guid>
+        
+        
+        <category>Story</category>
+        
+      </item>
+    
+      <item>
+        <title>Speeding up Gradle builds</title>
+        <description>&lt;p&gt;Gradle is a nice build system and there are many benefits to using it for Android builds. However, a common complaint about Gradle is that build times are much longer than they were with the old ant-based built system. Specifically, building and installing apps from Android Studio or IntelliJ involves a lot more waiting than developers are used to compared to Eclipse and ADT. Whether you’re using Android Studio or Gradle on the command line, there are a few things you can do to speed your builds up.&lt;/p&gt;
+
+&lt;p&gt;Note that these suggestions apply to Gradle in general, not just to Android builds. At the time of writing the latest version of Android Studio is 0.8.11 and the latest version of Gradle is 2.1. Both of these tools are evolving and improving rapidly; we’ll try to keep this post up to date as things change.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Update April 2, 2015:&lt;/em&gt; The content below still applies to Studio 1.1, 1.2 preview 4, and Gradle 2.2.1.&lt;/p&gt;
+
+&lt;h2 id=&quot;use-the-gradle-daemon&quot;&gt;Use the Gradle daemon&lt;/h2&gt;
+
+&lt;p&gt;This one is a must if you’re building frequently. The Gradle daemon is a process that runs in the background on your machine. When you run a Gradle task using the daemon, the already-running process handles it. This eliminates Gradle startup costs that are otherwise incurred every time you run Gradle. The only downside to using the daemon is that the process takes up some memory: on my machine a couple hundred MB. After 3 hours of idle time the daemon will stop itself; you can stop it earlier by running &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle --stop&lt;/code&gt; on the command line (this is useful when sometimes your gradle builds give an error &lt;code class=&quot;highlighter-rouge&quot;&gt;Unable to locate a Java Runtime to invoke&lt;/code&gt;). See the &lt;a href=&quot;http://www.gradle.org/docs/current/userguide/gradle_daemon.html&quot;&gt;Gradle daemon&lt;/a&gt; chapter in the Gradle user guide for more information.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-android-studio&quot;&gt;In Android Studio&lt;/h3&gt;
+
+&lt;p&gt;Nothing to do! Android Studio uses a daemon by default, so you don’t need to configure it.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-the-command-line&quot;&gt;On the command line&lt;/h3&gt;
+
+&lt;p&gt;You can configure your project to always use a daemon by adding the following line to the &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle.properties&lt;/code&gt; file in your project directory:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;org.gradle.daemon=true&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to use the daemon only for certain tasks, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--daemon&lt;/code&gt; flag when starting the task. This will connect a running daemon, or start a new one if necessary. For example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle build --daemon&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;compile-projects-in-parallel&quot;&gt;Compile projects in parallel&lt;/h2&gt;
+
+&lt;p&gt;If your Gradle build contains multiple decoupled projects, you can take advantage of Gradle’s parallel mode. In parallel mode, Gradle will run multiple executor threads, which can execute tasks from different projects in parallel. By default Gradle will create one executor thread for each CPU core on your machine, but this is configurable.&lt;/p&gt;
+
+&lt;p&gt;For more information about multi-project builds, decoupled projects, and parallel execution, have a look at the &lt;a href=&quot;http://www.gradle.org/docs/current/userguide/multi_project_builds.html&quot;&gt;Multi-project Builds&lt;/a&gt; section in the Gradle user guide.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-android-studio-1&quot;&gt;In Android Studio&lt;/h3&gt;
+
+&lt;p&gt;You can turn on parallel execution mode in Android Studio’s settings. Under the &lt;strong&gt;Compiler (Gradle-based Android Projects)&lt;/strong&gt; section in Studio 1.1 (or &lt;strong&gt;Build, Execution, Deployment &amp;gt; Compiler &amp;gt; Compiler&lt;/strong&gt; section in Studio 1.2), check the “Compile independent modules in parallel” box. If you want to change the number of threads Gradle uses, add &lt;code class=&quot;highlighter-rouge&quot;&gt;--parallel-threads=N&lt;/code&gt; to the “Command-line options” field on the same screen, where &lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt; is the number of threads to use.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-the-command-line-1&quot;&gt;On the command line&lt;/h3&gt;
+
+&lt;p&gt;Like the daemon, you an configure this per-project and per-task. To always build in parallel, add the following line to your &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle.properties&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;org.gradle.parallel=true&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To use parallel mode for only a particular task, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--parallel&lt;/code&gt; flag, optionally with the &lt;code class=&quot;highlighter-rouge&quot;&gt;--parallel-threads&lt;/code&gt; flag to change the number of threads used:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle build --parallel --parallel-threads=N&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-projects-on-demand&quot;&gt;Configure projects on demand&lt;/h2&gt;
+
+&lt;p&gt;In its default mode, Gradle configures every project before executing tasks, regardless of whether the project is actually needed for the particular build. “Configuration on demand” mode changes this behaviour, only configuring required projects. Like parallel mode, configuration on demand mode will have the greatest effect on multi-project builds with decoupled projects. Note that configuration on demand mode is currently an incubating feature, so isn’t fully supported. You can learn more about it in the &lt;a href=&quot;http://www.gradle.org/docs/current/userguide/multi_project_builds.html&quot;&gt;Multi-project Builds&lt;/a&gt; section of the Gradle user guide.&lt;/p&gt;
+
+&lt;h3 id=&quot;in-android-studio-2&quot;&gt;In Android Studio&lt;/h3&gt;
+
+&lt;p&gt;You can turn on configure on demand mode on the same screen that has the parallel build settings. In the &lt;strong&gt;Compiler (Gradle-based Android Projects)&lt;/strong&gt; section in Studio 1.1 (or &lt;strong&gt;Build, Execution, Deployment &amp;gt; Compiler &amp;gt; Compiler&lt;/strong&gt; section in Studio 1.2) of Android Studio’s settings. Toggle the “Configure on demand” checkbox to turn the mode on and off.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-the-command-line-2&quot;&gt;On the command line&lt;/h3&gt;
+
+&lt;p&gt;This works the same way as parallel mode. To turn on configuration on demand mode for all tasks, add the following line to your &lt;code class=&quot;highlighter-rouge&quot;&gt;gradle.properties&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;org.gradle.configureondemand=true&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And to use configure on demand mode for a single task, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--configure-on-demand&lt;/code&gt; flag:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle build --configure-on-demand&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;avoid-unnecessary-rebuilds&quot;&gt;Avoid unnecessary rebuilds&lt;/h2&gt;
+
+&lt;p&gt;This last point is more about workflow than Gradle specifically. Often frequent rebuilds in Android development happen when we’re tweaking the interface and need to see how each change looks. This feedback loop can be sped up immensely by leveraging the Android resource system and tools that avoid costly rebuilds.&lt;/p&gt;
+
+&lt;p&gt;The Android Studio layout preview pane is the most obvious example of this sort of tool. It gives you a decent preview of your layout, but it’s often incomplete and doesn’t show how your different layouts actually fit together. We built &lt;a href=&quot;/&quot;&gt;Mirror&lt;/a&gt; to stretch this rebuild-free development style &lt;em&gt;much&lt;/em&gt; further, letting you view and work on the entire UI of your app without needing to rebuild and reinstall it. Just change your layouts, styles, assets or Java/Kotlin code of your custom views, a preview of your layouts or animations will be ready on the device in seconds.&lt;/p&gt;
+
+&lt;p&gt;If it sounds like this would save you time and improve your work, download the &lt;a href=&quot;/mirror-downloads&quot;&gt;Android Studio plugin&lt;/a&gt;. It’s free to try! If you want to learn more, check out &lt;a href=&quot;/&quot;&gt;our homepage&lt;/a&gt; or the &lt;a href=&quot;/mirror-tutorial&quot;&gt;Mirror tutorial&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 07 Oct 2014 15:36:36 -0700</pubDate>
+        <link>http://jimulabs.com/2014/10/speeding-gradle-builds/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2014/10/speeding-gradle-builds/</guid>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
+      <item>
+        <title>Building Android layouts with Mirror - View Pagers</title>
+        <description>&lt;p&gt;&lt;em&gt;This is part of a series of posts on using Mirror to rapidly build your app’s user interface. Mirror lets you see immediately how your layouts and resources look on your phone or tablet, without needing to code up mock adapters or constantly re-install your app. For a general overview of how to use Mirror, check out the &lt;a href=&quot;/mirror-tutorial&quot;&gt;Mirror Tutorial&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;previewing-page-based-layouts-with-view-pagers&quot;&gt;Previewing page-based layouts with View Pagers&lt;/h2&gt;
+
+&lt;p&gt;In the last two posts we looked at previewing lists using Mirror; we saw how to populate both &lt;a href=&quot;/2014/09/building-android-layouts-mirror-listviews/&quot;&gt;simple&lt;/a&gt; and &lt;a href=&quot;/2014/09/build-android-layouts-mirror-complex-listviews/&quot;&gt;complex&lt;/a&gt; lists. In this post we’re going to look at view pagers. View pagers are a very common Android design pattern and form the backbone of the user experience for many apps. When you’re implementing the layouts for the pages in a view pager, it’s crucial to see the whole experience together to make sure the pages are consistent and are arranged in a sensible manner. Mirror lets you preview view pager based interfaces and, as usual, fill them with data to get an accurate view of your UI.&lt;/p&gt;
+
+&lt;p&gt;As an example, the Gmail app lets you swipe left and right to move between messages. Swiping left will switch to the next oldest message, and swiping right will switch to the next newest. This behaviour can be implemented using a &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt;; let’s see how to preview this UI using Mirror. We’ll need two layouts for this example. The first is the “top-level” layout that will hold the pages. We’ll call this layout &lt;code class=&quot;highlighter-rouge&quot;&gt;inbox_messages&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;!-- layout/inbox_messages.xml --&amp;gt;
+	&amp;lt;ViewPager android:id=&quot;@+id/pager&quot; ... /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We’ll also need a layout to hold each message – let’s call it &lt;code class=&quot;highlighter-rouge&quot;&gt;message&lt;/code&gt;. We’ll have a few fields for the message, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;sender&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;subject&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt;, and we’ll put everything in a &lt;code class=&quot;highlighter-rouge&quot;&gt;ScrollView&lt;/code&gt; in case the message is too long to fit on one screen:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;!-- layout/message.xml --&amp;gt;
+		&amp;lt;ScrollView ...&amp;gt;
+		    &amp;lt;LinearLayout ...&amp;gt;
+		        &amp;lt;TextView android:id=&quot;@+id/sender&quot; ... /&amp;gt;
+		        &amp;lt;TextView android:id=&quot;@+id/subject&quot; ... /&amp;gt;
+		        &amp;lt;TextView android:id=&quot;@+id/content&quot; ... /&amp;gt;
+		    &amp;lt;/LinearLayout&amp;gt;
+		&amp;lt;/ScrollView&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;As always, Mirror previews screen files rather than layouts directly, so we’ll need a screen file to preview everything. We want the screen file to show our &lt;code class=&quot;highlighter-rouge&quot;&gt;inbox_messages&lt;/code&gt; layout, but fill the &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt; with pages using he &lt;code class=&quot;highlighter-rouge&quot;&gt;message&lt;/code&gt; layout. This is easy to do with sample data:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;		&amp;lt;!-- mirror/messages.xml --&amp;gt;
+		&amp;lt;screen&amp;gt;
+		  &amp;lt;_content layout=&quot;@layout/inbox_messages&quot;&amp;gt;
+		    &amp;lt;pager&amp;gt; &amp;lt;!-- the id of our ViewPager --&amp;gt;
+		      &amp;lt;_page layout=&quot;@layout/message&quot;&amp;gt;
+		        &amp;lt;sender text=&quot;James Gosling&quot; /&amp;gt;
+		        &amp;lt;subject text=&quot;Fault tolerance&quot; /&amp;gt;
+		        &amp;lt;content&amp;gt;In particular, you have to worry about how to build systems that can be robust
+		        and continue operating in the face of partial failures, because most of the systems that
+		        people are building that are of any interest are ones where there&#39;s always something
+		        that&#39;s broken.&amp;lt;/content&amp;gt;
+		      &amp;lt;/_page&amp;gt;
+		      &amp;lt;_page layout=&quot;@layout/message&quot;&amp;gt;
+		        &amp;lt;sender text=&quot;Bjarne Stroustrup&quot; /&amp;gt;
+		        &amp;lt;subject text=&quot;Complexity&quot; /&amp;gt;
+		        &amp;lt;content&amp;gt;The simple fact is that complexity will emerge somewhere, if not in the
+		        language definition, than in thousands of applications and libraries.&amp;lt;/content&amp;gt;
+		      &amp;lt;/_page&amp;gt;
+		      &amp;lt;_page layout=&quot;@layout/message&quot;&amp;gt;
+		        &amp;lt;sender text=&quot;Simon Peyton-Jones&quot; /&amp;gt;
+		        &amp;lt;subject text=&quot;Purity&quot; /&amp;gt;
+		        &amp;lt;content&amp;gt;You only have to reason about values and not about state. If you give a function
+		        the same input, it&#39;ll give you the same output, every time. This has implications for
+		        reasoning, for compiling, for parallelism.&amp;lt;/content&amp;gt;
+		      &amp;lt;/_page&amp;gt;
+		    &amp;lt;/pager&amp;gt;
+		  &amp;lt;/_content&amp;gt;
+		&amp;lt;/screen&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The key element here is the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;_page&amp;gt;&lt;/code&gt; tag in the screen file. &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;_page&amp;gt;&lt;/code&gt; defines a single page in a view pager. The &lt;code class=&quot;highlighter-rouge&quot;&gt;layout&lt;/code&gt; attribute specifies what layout the page should be filled with. Inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;_page&amp;gt;&lt;/code&gt; element, you can reference views from that layout the same way you do inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;_content&amp;gt;&lt;/code&gt; element. In this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;sender&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;subject&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt; are all ids of views inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;@layout/message&lt;/code&gt; layout.&lt;/p&gt;
+
+&lt;p&gt;Start Mirror and open the &lt;code class=&quot;highlighter-rouge&quot;&gt;messages&lt;/code&gt; screen: you’ll see the first email message, and swiping left and right will switch between the three emails. Now you can edit and style the &lt;code class=&quot;highlighter-rouge&quot;&gt;message&lt;/code&gt; layout and see the result in context, exactly as it will look in the running application.&lt;/p&gt;
+
+&lt;h3 id=&quot;next-time&quot;&gt;Next time&lt;/h3&gt;
+
+&lt;p&gt;This gives an overview of how to create a basic page-based layout and fill in the pages. Often paging layouts come with some extra UI, particularly tabs. In the next post we’ll add tabs to our layout by adding an action bar to our Mirror preview. We’ll also look at populating the rest of the action bar, which will let us create very accurate previews that look exactly like the production app.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; The quotes in the examples were taken from &lt;em&gt;Masterminds of Programming&lt;/em&gt;, by Federico Biancuzzi and Shane Warden. It’s a wonderful book and I recommend checking it out.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 03 Oct 2014 10:55:53 -0700</pubDate>
+        <link>http://jimulabs.com/2014/10/building-android-layouts-mirror-view-pagers/</link>
+        <guid isPermaLink="true">http://jimulabs.com/2014/10/building-android-layouts-mirror-view-pagers/</guid>
+        
+        
+        <category>Tutorial</category>
+        
+      </item>
+    
   </channel>
 </rss>
