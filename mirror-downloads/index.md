@@ -12,55 +12,26 @@ permalink: /mirror-downloads/
 By downloading jimu Mirror on this site or via JetBrain's plugin repository, you agree to jimu Labs' [End User License Agreement]({{site.baseurl}}/mirror-eula)
 
 
-
-
-
-### If you use Android Studio 1.4, 1.5 or 2.0
-
-
-
-
-
+### If you use Android Studio 3.0
 ##### Method 1: from JetBrains plugin repository
-
-
-
-
-
 In Android Studio/IDEA, `Configure -> Plugins -> Browse repositories... -> Search "jimu Mirror" -> Install`
-
-
-
-
 
 <p><a class="button blue medium" href="/mirror-android-studio-plugin-installation-guide/">See installation guide</a></p>
 
-
-
-
 ##### Method 2: install the plugin zip file:
 
-
-
-
-
-<p><a class="button green medium" href="http://bit.ly/1YdU439">Download Mirror 2.5.9 for Android Studio 1.4+</a></p>
-
-
-
-
+<p><a class="button green medium" href="http://bit.ly/2Et03xg">Download Mirror 2.6 for Android Studio 3.0+</a></p>
 
 In Android Studio/IDEA, `Configure -> Plugins -> install plugin from disk`, and then choose the downloaded zip file.
 
 
+### If you use Android Studio 1.4, 1.5 or 2.0
+
+<p><a class="button green medium" href="http://bit.ly/1YdU439">Download Mirror 2.5.9</a></p>
 
 
 
 ### If you use Android Studio 1.3 / IntelliJ IDEA 
-
-
-
-
 
 <p><a class="button green medium" href="http://bit.ly/1VDPMPR">Download Mirror 2.5.7 for Android Studio 1.3 / IDEA</a></p>
 
@@ -154,8 +125,13 @@ See this [tutorial]({{site.baseurl}}/mirror-tutorial) that will help you create 
 
 # Change log
 
+## 2.6 - Feb 14, 2018
 
-
+- Support Android Studio 3.0
+- Automatically open previews on connected devices when a layout file is open in the editor
+- Replay an animation in preview by three-finger tap, or clicking the button "Replay" in Android Studio
+- Better search support in the main screen list
+- Improved stability
 
 
 ## 2.5.9 - Mar 4, 2016
